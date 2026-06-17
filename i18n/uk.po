@@ -1,0 +1,689 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#   * training_center
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-06-13 00:00+0000\n"
+"PO-Revision-Date: 2026-06-13 00:00+0000\n"
+"Last-Translator: Ivan Kokhanovskyi\n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. module: training_center
+#: model:ir.module.category,name:training_center.module_category_training_center
+#: model:res.groups.privilege,name:training_center.privilege_training_center_roles
+msgid "Training Center"
+msgstr "HR Лікарня"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_student
+msgid "Student"
+msgstr "Пацієнт"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_assistant
+msgid "Assistant"
+msgstr "Інтерн"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_teacher
+msgid "Teacher"
+msgstr "Лікар"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_manager
+msgid "Manager"
+msgstr "Менеджер"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_admin
+msgid "Administrator"
+msgstr "Адміністратор"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_lesson
+msgid "Training center lesson"
+msgstr "Відвідування лікарні"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_student
+msgid "Training center student"
+msgstr "Пацієнт лікарні"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher
+msgid "Training center teacher"
+msgstr "Лікар лікарні"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_subject
+msgid "Subject"
+msgstr "Хвороба"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher_category
+msgid "Teacher category"
+msgstr "Категорія лікаря"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher_assignment_history
+msgid "Main teacher history"
+msgstr "Історія персонального лікаря"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_lesson_report_wizard
+msgid "Lesson report wizard"
+msgstr "Майстер звіту відвідувань"
+
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_subject_report_wizard
+msgid "Subject Report Wizard"
+msgstr "Майстер звіту по хворобах"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__status
+msgid "Lesson Status"
+msgstr "Статус відвідування"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__planned
+msgid "Planned"
+msgstr "Заплановано"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__done
+msgid "Done"
+msgstr "Завершено"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__cancelled
+msgid "Cancelled"
+msgstr "Скасовано"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__planned_datetime
+msgid "Planned Date and Time"
+msgstr "Заплановані дата і час"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__lesson_datetime
+msgid "Lesson Date and Time"
+msgstr "Дата і час відвідування"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__summary
+msgid "Summary"
+msgstr "Підсумок"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__subject_id
+msgid "Subject"
+msgstr "Хвороба"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__same_subject_lesson_count
+msgid "Same Subject Lessons"
+msgstr "Відвідування з такою ж хворобою"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__specialty
+msgid "Specialty"
+msgstr "Спеціальність"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__category_id
+msgid "Category"
+msgstr "Категорія"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__user_id
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__user_id
+msgid "System User"
+msgstr "Користувач системи"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__is_assistant
+msgid "Teacher Is Assistant"
+msgstr "Лікар є інтерном"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__mentor_id
+msgid "Mentor"
+msgstr "Наставник"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__assistant_ids
+msgid "Assistants"
+msgstr "Інтерни"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__assistant_names
+msgid "Assistant Names"
+msgstr "Імена інтернів"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__lesson_ids
+msgid "Lessons"
+msgstr "Відвідування"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__personal_teacher_id
+msgid "Main Teacher"
+msgstr "Персональний лікар"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__teacher_history_ids
+#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_history
+#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_history
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
+msgid "Main Teacher History"
+msgstr "Історія персонального лікаря"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__insurance_policy_number
+msgid "Insurance Policy Number"
+msgstr "Номер страхового поліса"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__blood_type
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__blood_type
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__blood_type
+msgid "Blood Type"
+msgstr "Група крові"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__gender
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__gender
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__gender
+msgid "Gender"
+msgstr "Стать"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__birth_date
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__birth_date
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__birth_date
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__age
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__age
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__age
+msgid "Age"
+msgstr "Вік"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__male
+msgid "Male"
+msgstr "Чоловіча"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__female
+msgid "Female"
+msgstr "Жіноча"
+
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__other
+msgid "Other"
+msgstr "Інше"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__code
+msgid "Code"
+msgstr "Код"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__parent_id
+msgid "Parent Subject"
+msgstr "Батьківська хвороба"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__child_ids
+msgid "Child Subjects"
+msgstr "Дочірні хвороби"
+
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_flu
+msgid "Flu"
+msgstr "Грип"
+
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_covid
+msgid "Covid"
+msgstr "COVID-19"
+
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_cold
+msgid "Cold"
+msgstr "Застуда"
+
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_assistant
+msgid "Assistant Teacher"
+msgstr "Лікар-інтерн"
+
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_specialist
+msgid "Specialist Teacher"
+msgstr "Лікар-спеціаліст"
+
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_highest
+msgid "Highest Category Teacher"
+msgstr "Лікар вищої категорії"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_lesson
+#: model:ir.ui.menu,name:training_center.menu_training_center_lessons
+msgid "Lessons"
+msgstr "Відвідування"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_student
+#: model:ir.ui.menu,name:training_center.menu_training_center_students
+msgid "Students"
+msgstr "Пацієнти"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_teacher
+#: model:ir.ui.menu,name:training_center.menu_training_center_teachers
+msgid "Teachers"
+msgstr "Лікарі"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_subject
+#: model:ir.ui.menu,name:training_center.menu_training_center_subjects
+msgid "Subjects"
+msgstr "Хвороби"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_category
+#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_categories
+msgid "Teacher Categories"
+msgstr "Категорії лікарів"
+
+#. module: training_center
+#: model:ir.ui.menu,name:training_center.menu_training_center_root
+msgid "Training Center"
+msgstr "Лікарня"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_lesson_report_wizard
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+msgid "Lesson Report"
+msgstr "Звіт відвідувань"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_subject_report_wizard
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
+msgid "Subject Report"
+msgstr "Звіт по хворобах"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
+msgid "Show Report"
+msgstr "Показати звіт"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
+msgid "Cancel"
+msgstr "Скасувати"
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_student.py:0
+#: code:addons/training_center/models/training_center_teacher.py:0
+msgid "Create Lesson"
+msgstr "Створити відвідування"
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_student.py:0
+msgid "Student Lessons"
+msgstr "Відвідування пацієнта"
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "Lessons With Same Subject"
+msgstr "Відвідування з такою ж хворобою"
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot change date, time or teacher for a completed lesson."
+msgstr "Не можна змінювати дату, час або лікаря для завершеного відвідування."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot archive completed lessons."
+msgstr "Не можна архівувати завершені відвідування."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot delete completed lessons."
+msgstr "Не можна видаляти завершені відвідування."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher.py:0
+msgid "Mentor cannot be an assistant."
+msgstr "Наставник не може бути інтерном."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher_assignment_history.py:0
+msgid "Warning"
+msgstr "Попередження"
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher_assignment_history.py:0
+msgid "Teacher change date cannot be earlier than assignment date."
+msgstr "Дата зміни лікаря не може бути раніше ніж дата призначення."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_subject_report_wizard.py:0
+msgid "Date From cannot be later than Date To."
+msgstr "Дата початку не може бути пізнішою за дату завершення."
+
+#. module: training_center
+#: code:addons/training_center/models/training_center_subject.py:0
+msgid "Subject hierarchy cannot be recursive."
+msgstr "Ієрархія хвороб не може бути рекурсивною."
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Teacher Report"
+msgstr "Звіт по лікарю"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Lesson History"
+msgstr "Історія відвідувань"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Students of this Teacher"
+msgstr "Пацієнти цього лікаря"
+
+#. module: training_center
+#: model:ir.actions.report,name:training_center.action_report_training_center_teacher
+msgid "Teacher Report"
+msgstr "Звіт по лікарю"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Lesson Information"
+msgstr "Інформація про відвідування"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Student and Teacher"
+msgstr "Пацієнт і лікар"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
+msgid "Completed"
+msgstr "Завершено"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
+msgid "Current Year"
+msgstr "Поточний рік"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Status"
+msgstr "Статус"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
+msgid "Month"
+msgstr "Місяць"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_pivot
+msgid "Lessons Analysis"
+msgstr "Аналіз відвідувань"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_graph
+msgid "Lessons by Month and Subject"
+msgstr "Відвідування за місяцем і хворобою"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_form
+msgid "Subject Information"
+msgstr "Інформація про хворобу"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_search
+msgid "Root Subjects"
+msgstr "Кореневі хвороби"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_search
+msgid "Subject Hierarchy"
+msgstr "Ієрархія хвороб"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
+msgid "General Information"
+msgstr "Загальна інформація"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+msgid "Medical Information"
+msgstr "Медична інформація"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
+msgid "Contacts"
+msgstr "Контакти"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+msgid "Mentor Information"
+msgstr "Інформація про наставника"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Specialty:"
+msgstr "Спеціальність:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+msgid "Category:"
+msgstr "Категорія:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Email:"
+msgstr "Електронна пошта:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Phone:"
+msgstr "Телефон:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_search
+msgid "Mentors"
+msgstr "Наставники"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_search
+msgid "Assistant Status"
+msgstr "Статус інтерна"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Open"
+msgstr "Відкрити"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Delete"
+msgstr "Видалити"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Qualification:"
+msgstr "Кваліфікація:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Mentor:"
+msgstr "Наставник:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Assistants:"
+msgstr "Інтерни:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Student Name"
+msgstr "Ім'я пацієнта"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_mass_reassign_teacher_wizard_form
+msgid "Reassign"
+msgstr "Перепризначити"
+
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_mass_reassign_teacher_wizard
+msgid "Reassign Main Teacher"
+msgstr "Перепризначити персонального лікаря"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+msgid "Show Lessons"
+msgstr "Показати відвідування"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Website:"
+msgstr "Вебсайт:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "City:"
+msgstr "Місто:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Teacher Report:"
+msgstr "Звіт по лікарю:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Planned Date"
+msgstr "Запланована дата"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Lesson Date"
+msgstr "Дата відвідування"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "No lessons found."
+msgstr "Відвідування не знайдено."
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "No students found."
+msgstr "Пацієнтів не знайдено."
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Printed at:"
+msgstr "Надруковано:"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Company city:"
+msgstr "Місто компанії:"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__phone
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__phone
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Phone"
+msgstr "Телефон"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__email
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__email
+msgid "Email"
+msgstr "Електронна пошта"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_category__name
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__active
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__active
+msgid "Active"
+msgstr "Активний"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_subject_report_wizard__date_from
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__date_from
+msgid "Date From"
+msgstr "Дата з"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_subject_report_wizard__date_to
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__date_to
+msgid "Date To"
+msgstr "Дата по"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_category__sequence
+msgid "Sequence"
+msgstr "Послідовність"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__assignment_date
+msgid "Assignment Date"
+msgstr "Дата призначення"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__teacher_change_date
+msgid "Teacher Change Date"
+msgstr "Дата зміни лікаря"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_mass_reassign_teacher_wizard__new_teacher_id
+msgid "New Teacher"
+msgstr "Новий лікар"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_mass_reassign_teacher_wizard__change_date
+msgid "Change Date"
+msgstr "Дата зміни"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__only_done
+msgid "Only Completed Lessons"
+msgstr "Тільки завершені відвідування"

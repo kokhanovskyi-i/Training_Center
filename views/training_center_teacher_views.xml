@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_training_center_teacher_list" model="ir.ui.view">
+        <field name="name">training.center.teacher.list</field>
+        <field name="model">training.center.teacher</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="specialty"/>
+                <field name="category_id"/>
+                <field name="is_assistant"/>
+                <field name="mentor_id"/>
+                <field name="user_id"/>
+                <field name="birth_date"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="blood_type"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_training_center_teacher_form" model="ir.ui.view">
+        <field name="name">training.center.teacher.form</field>
+        <field name="model">training.center.teacher</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string="General Information">
+                            <field name="name"/>
+                            <field name="specialty"/>
+                            <field name="category_id"/>
+                            <field name="is_assistant"/>
+                            <field name="mentor_id"
+                                   invisible="not is_assistant"
+                                   domain="[('is_assistant', '=', False)]"/>
+                            <field name="user_id"/>
+                        </group>
+
+                        <group string="Medical Information">
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="blood_type"/>
+                        </group>
+                    </group>
+
+                    <group string="Contacts">
+                        <field name="email"/>
+                        <field name="phone"/>
+                    </group>
+
+                    <group string="Mentor Information" invisible="not mentor_id">
+                        <field name="mentor_id"
+                               readonly="1"
+                               string="Mentor"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Assistants">
+                            <field name="assistant_ids" mode="kanban" readonly="1">
+                                <kanban>
+                                    <field name="name"/>
+                                    <field name="specialty"/>
+                                    <field name="category_id"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                    <templates>
+                                        <t t-name="card">
+                                            <main>
+                                                <field class="fw-bold fs-5" name="name"/>
+                                                <div>
+                                                    <span>Specialty: </span>
+                                                    <field name="specialty"/>
+                                                </div>
+                                                <div>
+                                                    <span>Category: </span>
+                                                    <field name="category_id"/>
+                                                </div>
+                                                <div>
+                                                    <span>Email: </span>
+                                                    <field name="email"/>
+                                                </div>
+                                                <div>
+                                                    <span>Phone: </span>
+                                                    <field name="phone"/>
+                                                </div>
+                                            </main>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_training_center_teacher_search" model="ir.ui.view">
+        <field name="name">training.center.teacher.search</field>
+        <field name="model">training.center.teacher</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       string="Teacher"
+                       filter_domain="['|', ('name', 'ilike', self), ('specialty', 'ilike', self)]"/>
+
+                <field name="category_id"/>
+                <field name="mentor_id"/>
+                <field name="user_id"/>
+
+                <separator/>
+
+                <filter name="mentors"
+                        string="Mentors"
+                        domain="[('assistant_ids', '!=', False)]"/>
+
+                <filter name="assistants"
+                        string="Assistants"
+                        domain="[('is_assistant', '=', True)]"/>
+
+                <separator/>
+
+                <filter name="group_by_category"
+                        string="Category"
+                        context="{'group_by': 'category_id'}"/>
+
+                <filter name="group_by_mentor"
+                        string="Mentor"
+                        context="{'group_by': 'mentor_id'}"/>
+
+                <filter name="group_by_is_assistant"
+                        string="Assistant Status"
+                        context="{'group_by': 'is_assistant'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_training_center_teacher_kanban" model="ir.ui.view">
+        <field name="name">training.center.teacher.kanban</field>
+        <field name="model">training.center.teacher</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="category_id"
+                    class="o_kanban_mobile">
+                <field name="name"/>
+                <field name="specialty"/>
+                <field name="category_id"/>
+                <field name="is_assistant"/>
+                <field name="mentor_id"/>
+                <field name="assistant_names"/>
+                <field name="email"/>
+                <field name="phone"/>
+
+                <templates>
+                    <t t-name="menu">
+                        <a type="open"
+                           class="dropdown-item">
+                            Open
+                        </a>
+
+                        <a type="delete"
+                           class="dropdown-item">
+                            Delete
+                        </a>
+                    </t>
+
+                    <t t-name="card">
+                        <main>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <field class="fw-bold fs-5" name="name"/>
+
+                                    <div class="mt-1">
+                                        <span>Qualification: </span>
+                                        <field name="category_id"/>
+                                    </div>
+
+                                    <div>
+                                        <span>Specialty: </span>
+                                        <field name="specialty"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-2" invisible="not is_assistant">
+                                <span class="badge text-bg-info">Assistant</span>
+                            </div>
+
+                            <div class="mt-2" invisible="not mentor_id">
+                                <span>Mentor: </span>
+                                <field name="mentor_id"/>
+                            </div>
+
+                            <div class="mt-2" invisible="not assistant_names">
+                                <strong>Assistants:</strong>
+                                <div>
+                                    <field name="assistant_names"/>
+                                </div>
+                            </div>
+
+                            <div class="mt-2">
+                                <div invisible="not email">
+                                    <span>Email: </span>
+                                    <field name="email"/>
+                                </div>
+
+                                <div invisible="not phone">
+                                    <span>Phone: </span>
+                                    <field name="phone"/>
+                                </div>
+                            </div>
+                        </main>
+
+                        <footer>
+                            <button name="action_create_lesson"
+                                    type="object"
+                                    class="btn btn-primary btn-sm">
+                                Create Lesson
+                            </button>
+
+                            <a type="open"
+                               role="button"
+                               class="btn btn-secondary btn-sm">
+                                Open
+                            </a>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_training_center_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="res_model">training.center.teacher</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="view_training_center_teacher_search"/>
+        <field name="context">{'group_by': 'category_id'}</field>
+    </record>
+</odoo>

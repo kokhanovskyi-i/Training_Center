@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_teacher_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="teacher">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            .teacher-report-header {
+                                border-bottom: 1px solid #999;
+                                padding-bottom: 10px;
+                                margin-bottom: 20px;
+                            }
+
+                            .teacher-report-company-logo {
+                                max-height: 70px;
+                                max-width: 160px;
+                            }
+
+                            .teacher-report-title {
+                                margin-top: 20px;
+                                margin-bottom: 15px;
+                            }
+
+                            .teacher-report-table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                margin-bottom: 25px;
+                                font-size: 12px;
+                            }
+
+                            .teacher-report-table th,
+                            .teacher-report-table td {
+                                border: 1px solid #777;
+                                padding: 6px;
+                                vertical-align: top;
+                            }
+
+                            .teacher-report-table th {
+                                background-color: #eeeeee;
+                                font-weight: bold;
+                            }
+
+                            .teacher-report-footer {
+                                margin-top: 30px;
+                                border-top: 1px solid #999;
+                                padding-top: 8px;
+                                font-size: 11px;
+                                color: #555;
+                            }
+
+                            .teacher-report-section-title {
+                                margin-top: 20px;
+                                margin-bottom: 8px;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        </style>
+
+                        <div class="teacher-report-header">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img t-if="res_company.logo"
+                                         t-att-src="image_data_uri(res_company.logo)"
+                                         class="teacher-report-company-logo"/>
+                                </div>
+
+                                <div class="col-9">
+                                    <h3 t-field="res_company.name"/>
+
+                                    <div t-if="res_company.phone">
+                                        <strong>Phone:</strong>
+                                        <span t-field="res_company.phone"/>
+                                    </div>
+
+                                    <div t-if="res_company.email">
+                                        <strong>Email:</strong>
+                                        <span t-field="res_company.email"/>
+                                    </div>
+
+                                    <div t-if="res_company.website">
+                                        <strong>Website:</strong>
+                                        <span t-field="res_company.website"/>
+                                    </div>
+
+                                    <div t-if="res_company.city">
+                                        <strong>City:</strong>
+                                        <span t-field="res_company.city"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="teacher-report-title">
+                            <h2>
+                                Teacher Report:
+                                <span t-field="teacher.name"/>
+                            </h2>
+                            <h4>
+                                Specialty:
+                                <span t-field="teacher.specialty"/>
+                            </h4>
+                        </div>
+
+                        <div class="teacher-report-section-title">
+                            Lesson History
+                        </div>
+
+                        <table class="teacher-report-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Planned Date</th>
+                                    <th>Lesson Date</th>
+                                    <th>Student</th>
+                                    <th>Subject</th>
+                                    <th>Summary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="lessons" t-value="teacher._get_report_lessons()"/>
+
+                                <tr t-if="not lessons">
+                                    <td colspan="6">No lessons found.</td>
+                                </tr>
+
+                                <tr t-foreach="lessons" t-as="lesson">
+                                    <td t-att-style="teacher._get_lesson_status_style(lesson.status)">
+                                        <span t-esc="teacher._get_lesson_status_label(lesson.status)"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="lesson.planned_datetime"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-if="lesson.lesson_datetime"
+                                              t-field="lesson.lesson_datetime"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="lesson.student_id"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="lesson.subject_id"/>
+                                    </td>
+
+                                    <td>
+                                        <div t-field="lesson.summary"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="teacher-report-section-title">
+                            Students
+                        </div>
+
+                        <table class="teacher-report-table">
+                            <thead>
+                                <tr>
+                                    <th>Student Name</th>
+                                    <th>Gender</th>
+                                    <th>Birth Date</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="students" t-value="teacher._get_report_students()"/>
+
+                                <tr t-if="not students">
+                                    <td colspan="4">No students found.</td>
+                                </tr>
+
+                                <tr t-foreach="students" t-as="student">
+                                    <td>
+                                        <span t-field="student.name"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="student.gender"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="student.birth_date"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="student.phone"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="teacher-report-footer">
+                            <div>
+                                <strong>Printed at:</strong>
+                                <span t-esc="context_timestamp(print_datetime).strftime('%d.%m.%Y %H:%M:%S')"/>
+                            </div>
+
+                            <div t-if="res_company.city">
+                                <strong>Company city:</strong>
+                                <span t-field="res_company.city"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

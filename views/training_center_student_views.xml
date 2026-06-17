@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_training_center_student_list" model="ir.ui.view">
+        <field name="name">training.center.student.list</field>
+        <field name="model">training.center.student</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="birth_date"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <field name="blood_type"/>
+                <field name="personal_teacher_id"/>
+                <field name="insurance_policy_number"/>
+                <field name="email"/>
+                <field name="phone"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_training_center_student_form" model="ir.ui.view">
+        <field name="name">training.center.student.form</field>
+        <field name="model">training.center.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_create_lesson"
+                            string="Create Lesson"
+                            type="object"
+                            class="btn-primary"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_lessons"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-calendar">
+                            <field name="lesson_count"
+                                   widget="statinfo"
+                                   string="Lessons"/>
+                        </button>
+                    </div>
+
+                    <group>
+                        <group string="General Information">
+                            <field name="name"/>
+                            <field name="birth_date"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="blood_type"/>
+                        </group>
+
+                        <group string="Contacts">
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="user_id"/>
+                            <field name="insurance_policy_number"/>
+                        </group>
+                    </group>
+
+                    <group string="Teachers">
+                        <field name="personal_teacher_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Main Teacher History">
+                            <field name="teacher_history_ids">
+                                <list editable="bottom">
+                                    <field name="teacher_id"/>
+                                    <field name="assignment_date"/>
+                                    <field name="teacher_change_date"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_training_center_student_search" model="ir.ui.view">
+        <field name="name">training.center.student.search</field>
+        <field name="model">training.center.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"
+                       string="Student Name"
+                       filter_domain="[('name', 'ilike', self)]"/>
+
+                <field name="phone"
+                       string="Phone"
+                       filter_domain="[('phone', 'ilike', self)]"/>
+
+                <field name="personal_teacher_id"/>
+
+                <separator/>
+
+                <filter name="group_by_personal_teacher"
+                        string="Main Teacher"
+                        context="{'group_by': 'personal_teacher_id'}"/>
+
+                <filter name="group_by_gender"
+                        string="Gender"
+                        context="{'group_by': 'gender'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_training_center_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">training.center.student</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="view_training_center_student_search"/>
+    </record>
+</odoo>
