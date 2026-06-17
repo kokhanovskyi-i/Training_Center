@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="doctor_hlus" model="hr.hospital.doctor">
+        <field name="name">Dr. Hlus</field>
+        <field name="specialty">Diagnostics</field>
+        <field name="category_id" ref="doctor_category_highest"/>
+        <field name="birth_date">1959-05-15</field>
+        <field name="gender">male</field>
+        <field name="blood_type">o_positive</field>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="email">house@example.com</field>
+        <field name="phone">+380671111111</field>
+    </record>
+
+    <record id="doctor_clus" model="hr.hospital.doctor">
+        <field name="name">Dr. Clus</field>
+        <field name="specialty">Diagnostics</field>
+        <field name="category_id" ref="doctor_category_specialist"/>
+        <field name="birth_date">1980-03-21</field>
+        <field name="gender">female</field>
+        <field name="blood_type">a_positive</field>
+        <field name="email">dr_clus@example.com</field>
+        <field name="phone">+380671234567</field>
+    </record>
+
+    <record id="doctor_plus" model="hr.hospital.doctor">
+        <field name="name">Dr. Plus</field>
+        <field name="specialty">Diagnostics</field>
+        <field name="category_id" ref="doctor_category_intern"/>
+        <field name="birth_date">1997-09-10</field>
+        <field name="gender">male</field>
+        <field name="blood_type">b_negative</field>
+        <field name="mentor_id" ref="doctor_hlus"/>
+        <field name="email">dr_plus@example.com</field>
+        <field name="phone">+380671234567</field>
+    </record>
+
+    <record id="doctor_flus" model="hr.hospital.doctor">
+        <field name="name">Dr. Flus</field>
+        <field name="specialty">Therapy Intern</field>
+        <field name="category_id" ref="doctor_category_intern"/>
+        <field name="mentor_id" ref="doctor_hlus"/>
+        <field name="birth_date">1998-04-14</field>
+        <field name="gender">male</field>
+        <field name="blood_type">a_positive</field>
+        <field name="email">dr_flus.adams@example.com</field>
+        <field name="phone">+380501112233</field>
+    </record>
+
+    <record id="doctor_zlus" model="hr.hospital.doctor">
+        <field name="name">Dr. Zlus</field>
+        <field name="specialty">Infectious Disease Intern</field>
+        <field name="category_id" ref="doctor_category_intern"/>
+        <field name="mentor_id" ref="doctor_clus"/>
+        <field name="birth_date">1999-09-27</field>
+        <field name="gender">female</field>
+        <field name="blood_type">b_negative</field>
+        <field name="email">dr_zlus@example.com</field>
+        <field name="phone">+380502223344</field>
+    </record>
+
+    <record id="patient_smith" model="hr.hospital.patient">
+        <field name="name">John Smith</field>
+        <field name="birth_date">1989-12-15</field>
+        <field name="gender">male</field>
+        <field name="blood_type">a_positive</field>
+        <field name="email">patient_smith@example.com</field>
+        <field name="phone">+380671234567</field>
+        <field name="personal_doctor_id" ref="doctor_hlus"/>
+        <field name="insurance_policy_number">POL-0000000001</field>
+    </record>
+
+    <record id="patient_doe" model="hr.hospital.patient">
+        <field name="name">John Doe</field>
+        <field name="birth_date">1989-12-15</field>
+        <field name="gender">male</field>
+        <field name="blood_type">o_positive</field>
+        <field name="email">patient_doe@example.com</field>
+        <field name="phone">+380671234567</field>
+        <field name="personal_doctor_id" ref="doctor_clus"/>
+        <field name="insurance_policy_number">POL-0000000002</field>
+    </record>
+
+    <record id="patient_twister" model="hr.hospital.patient">
+        <field name="name">John Twister</field>
+        <field name="birth_date">1989-12-15</field>
+        <field name="gender">male</field>
+        <field name="blood_type">b_negative</field>
+        <field name="email">patient_twister@example.com</field>
+        <field name="phone">+380671234567</field>
+        <field name="personal_doctor_id" ref="doctor_plus"/>
+        <field name="insurance_policy_number">POL-0000000003</field>
+    </record>
+
+    <record id="doctor_history_smith_hlus" model="hospital.doctor.history">
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="assignment_date">2025-01-10</field>
+        <field name="doctor_change_date">2025-04-15</field>
+    </record>
+
+    <record id="doctor_history_smith_clus" model="hospital.doctor.history">
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="assignment_date">2025-04-16</field>
+    </record>
+
+    <record id="doctor_history_doe_clus" model="hospital.doctor.history">
+        <field name="patient_id" ref="patient_doe"/>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="assignment_date">2025-02-05</field>
+    </record>
+
+    <record id="doctor_history_twister_plus" model="hospital.doctor.history">
+        <field name="patient_id" ref="patient_twister"/>
+        <field name="doctor_id" ref="doctor_plus"/>
+        <field name="assignment_date">2025-03-12</field>
+    </record>
+
+    <record id="appointment_smith_planned" model="hr.hospital.appointment">
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-07-01 09:00:00</field>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="summary">&lt;p&gt;Initial planned consultation.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_smith_done" model="hr.hospital.appointment">
+        <field name="status">done</field>
+        <field name="planned_datetime">2026-06-01 10:00:00</field>
+        <field name="visit_datetime">2026-06-01 10:05:00</field>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="summary">&lt;p&gt;Patient examined. Treatment assigned.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_doe_planned" model="hr.hospital.appointment">
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-07-02 11:30:00</field>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="patient_id" ref="patient_doe"/>
+        <field name="disease_id" ref="disease_covid"/>
+        <field name="summary">&lt;p&gt;Follow-up planned visit.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_doe_done" model="hr.hospital.appointment">
+        <field name="status">done</field>
+        <field name="planned_datetime">2026-06-03 13:00:00</field>
+        <field name="visit_datetime">2026-06-03 13:10:00</field>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="patient_id" ref="patient_doe"/>
+        <field name="disease_id" ref="disease_covid"/>
+        <field name="summary">&lt;p&gt;Visit completed successfully.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_twister_cancelled" model="hr.hospital.appointment">
+        <field name="status">cancelled</field>
+        <field name="planned_datetime">2026-06-15 15:00:00</field>
+        <field name="doctor_id" ref="doctor_plus"/>
+        <field name="patient_id" ref="patient_twister"/>
+        <field name="disease_id" ref="disease_cold"/>
+        <field name="summary">&lt;p&gt;Visit cancelled by patient.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_twister_planned" model="hr.hospital.appointment">
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-07-05 16:30:00</field>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="patient_id" ref="patient_twister"/>
+        <field name="disease_id" ref="disease_cold"/>
+        <field name="summary">&lt;p&gt;Consultation is planned.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_smith_march_done" model="hr.hospital.appointment">
+        <field name="status">done</field>
+        <field name="planned_datetime">2026-03-10 09:30:00</field>
+        <field name="visit_datetime">2026-03-10 09:40:00</field>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="summary">&lt;p&gt;Additional demo visit for flu treatment control.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_doe_march_cancelled" model="hr.hospital.appointment">
+        <field name="status">cancelled</field>
+        <field name="planned_datetime">2026-03-18 12:00:00</field>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="patient_id" ref="patient_doe"/>
+        <field name="disease_id" ref="disease_covid"/>
+        <field name="summary">&lt;p&gt;Additional demo visit cancelled by patient.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_twister_april_planned" model="hr.hospital.appointment">
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-04-08 14:15:00</field>
+        <field name="doctor_id" ref="doctor_plus"/>
+        <field name="patient_id" ref="patient_twister"/>
+        <field name="disease_id" ref="disease_cold"/>
+        <field name="summary">&lt;p&gt;Additional demo planned visit for cold symptoms.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_smith_april_done" model="hr.hospital.appointment">
+        <field name="status">done</field>
+        <field name="planned_datetime">2026-04-22 10:45:00</field>
+        <field name="visit_datetime">2026-04-22 10:55:00</field>
+        <field name="doctor_id" ref="doctor_clus"/>
+        <field name="patient_id" ref="patient_smith"/>
+        <field name="disease_id" ref="disease_covid"/>
+        <field name="summary">&lt;p&gt;Additional demo completed visit with COVID diagnosis.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_doe_may_planned" model="hr.hospital.appointment">
+        <field name="status">planned</field>
+        <field name="planned_datetime">2026-05-12 16:00:00</field>
+        <field name="doctor_id" ref="doctor_hlus"/>
+        <field name="patient_id" ref="patient_doe"/>
+        <field name="disease_id" ref="disease_flu"/>
+        <field name="summary">&lt;p&gt;Additional demo planned follow-up visit.&lt;/p&gt;</field>
+    </record>
+
+    <record id="appointment_task_4_twister_may_done" model="hr.hospital.appointment">
+        <field name="status">done</field>
+        <field name="planned_datetime">2026-05-28 11:20:00</field>
+        <field name="visit_datetime">2026-05-28 11:35:00</field>
+        <field name="doctor_id" ref="doctor_plus"/>
+        <field name="patient_id" ref="patient_twister"/>
+        <field name="disease_id" ref="disease_cold"/>
+        <field name="summary">&lt;p&gt;Additional demo completed visit for cold symptoms.&lt;/p&gt;</field>
+    </record>
+
+    <record id="demo_disease_respiratory" model="hr.hospital.disease">
+        <field name="code">RESP</field>
+        <field name="name">Respiratory diseases</field>
+    </record>
+
+    <record id="demo_disease_viral_respiratory" model="hr.hospital.disease">
+        <field name="code">VIRAL-RESP</field>
+        <field name="name">Viral respiratory infections</field>
+        <field name="parent_id" ref="demo_disease_respiratory"/>
+    </record>
+
+    <record id="demo_disease_influenza" model="hr.hospital.disease">
+        <field name="code">INFL</field>
+        <field name="name">Influenza</field>
+        <field name="parent_id" ref="demo_disease_viral_respiratory"/>
+    </record>
+
+    <record id="demo_disease_covid19" model="hr.hospital.disease">
+        <field name="code">COVID19</field>
+        <field name="name">COVID-19</field>
+        <field name="parent_id" ref="demo_disease_viral_respiratory"/>
+    </record>
+
+    <record id="demo_disease_bacterial_pneumonia" model="hr.hospital.disease">
+        <field name="code">PNEUM-BAC</field>
+        <field name="name">Bacterial pneumonia</field>
+        <field name="parent_id" ref="demo_disease_respiratory"/>
+    </record>
+</odoo>

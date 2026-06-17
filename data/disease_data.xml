@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="disease_flu" model="hr.hospital.disease">
+        <field name="name">Flu</field>
+        <field name="code">FLU</field>
+    </record>
+
+    <record id="disease_covid" model="hr.hospital.disease">
+        <field name="name">Covid</field>
+        <field name="code">COVID</field>
+    </record>
+
+    <record id="disease_cold" model="hr.hospital.disease">
+        <field name="name">Cold</field>
+        <field name="code">COLD</field>
+    </record>
+</odoo>

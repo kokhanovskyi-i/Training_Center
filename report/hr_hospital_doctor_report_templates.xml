@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_doctor_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doctor">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            .doctor-report-header {
+                                border-bottom: 1px solid #999;
+                                padding-bottom: 10px;
+                                margin-bottom: 20px;
+                            }
+
+                            .doctor-report-company-logo {
+                                max-height: 70px;
+                                max-width: 160px;
+                            }
+
+                            .doctor-report-title {
+                                margin-top: 20px;
+                                margin-bottom: 15px;
+                            }
+
+                            .doctor-report-table {
+                                width: 100%;
+                                border-collapse: collapse;
+                                margin-bottom: 25px;
+                                font-size: 12px;
+                            }
+
+                            .doctor-report-table th,
+                            .doctor-report-table td {
+                                border: 1px solid #777;
+                                padding: 6px;
+                                vertical-align: top;
+                            }
+
+                            .doctor-report-table th {
+                                background-color: #eeeeee;
+                                font-weight: bold;
+                            }
+
+                            .doctor-report-footer {
+                                margin-top: 30px;
+                                border-top: 1px solid #999;
+                                padding-top: 8px;
+                                font-size: 11px;
+                                color: #555;
+                            }
+
+                            .doctor-report-section-title {
+                                margin-top: 20px;
+                                margin-bottom: 8px;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        </style>
+
+                        <div class="doctor-report-header">
+                            <div class="row">
+                                <div class="col-3">
+                                    <img t-if="res_company.logo"
+                                         t-att-src="image_data_uri(res_company.logo)"
+                                         class="doctor-report-company-logo"/>
+                                </div>
+
+                                <div class="col-9">
+                                    <h3 t-field="res_company.name"/>
+
+                                    <div t-if="res_company.phone">
+                                        <strong>Phone:</strong>
+                                        <span t-field="res_company.phone"/>
+                                    </div>
+
+                                    <div t-if="res_company.email">
+                                        <strong>Email:</strong>
+                                        <span t-field="res_company.email"/>
+                                    </div>
+
+                                    <div t-if="res_company.website">
+                                        <strong>Website:</strong>
+                                        <span t-field="res_company.website"/>
+                                    </div>
+
+                                    <div t-if="res_company.city">
+                                        <strong>City:</strong>
+                                        <span t-field="res_company.city"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="doctor-report-title">
+                            <h2>
+                                Doctor Report:
+                                <span t-field="doctor.name"/>
+                            </h2>
+                            <h4>
+                                Specialty:
+                                <span t-field="doctor.specialty"/>
+                            </h4>
+                        </div>
+
+                        <div class="doctor-report-section-title">
+                            Visit History
+                        </div>
+
+                        <table class="doctor-report-table">
+                            <thead>
+                                <tr>
+                                    <th>Status</th>
+                                    <th>Planned Date</th>
+                                    <th>Visit Date</th>
+                                    <th>Patient</th>
+                                    <th>Disease</th>
+                                    <th>Summary</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="appointments" t-value="doctor._get_report_appointments()"/>
+
+                                <tr t-if="not appointments">
+                                    <td colspan="6">No visits found.</td>
+                                </tr>
+
+                                <tr t-foreach="appointments" t-as="appointment">
+                                    <td t-att-style="doctor._get_appointment_status_style(appointment.status)">
+                                        <span t-esc="doctor._get_appointment_status_label(appointment.status)"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="appointment.planned_datetime"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-if="appointment.visit_datetime"
+                                              t-field="appointment.visit_datetime"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="appointment.patient_id"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="appointment.disease_id"/>
+                                    </td>
+
+                                    <td>
+                                        <div t-field="appointment.summary"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="doctor-report-section-title">
+                            Patients
+                        </div>
+
+                        <table class="doctor-report-table">
+                            <thead>
+                                <tr>
+                                    <th>Patient Name</th>
+                                    <th>Gender</th>
+                                    <th>Birth Date</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="patients" t-value="doctor._get_report_patients()"/>
+
+                                <tr t-if="not patients">
+                                    <td colspan="4">No patients found.</td>
+                                </tr>
+
+                                <tr t-foreach="patients" t-as="patient">
+                                    <td>
+                                        <span t-field="patient.name"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="patient.gender"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="patient.birth_date"/>
+                                    </td>
+
+                                    <td>
+                                        <span t-field="patient.phone"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="doctor-report-footer">
+                            <div>
+                                <strong>Printed at:</strong>
+                                <span t-esc="context_timestamp(print_datetime).strftime('%d.%m.%Y %H:%M:%S')"/>
+                            </div>
+
+                            <div t-if="res_company.city">
+                                <strong>Company city:</strong>
+                                <span t-field="res_company.city"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hr_hospital_appointment_list" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.list</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="planned_datetime"/>
+                <field name="visit_datetime"/>
+                <field name="status"/>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="disease_id"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hr_hospital_appointment_form" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.form</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status"
+                           widget="statusbar"
+                           statusbar_visible="planned,done,cancelled"/>
+                </header>
+
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_same_disease_visits"
+                                type="object"
+                                class="oe_stat_button"
+                                icon="fa-stethoscope"
+                                invisible="not disease_id">
+                            <field name="same_disease_visit_count"
+                                   widget="statinfo"
+                                   string="Same Disease Visits"/>
+                        </button>
+                    </div>
+
+                    <group>
+                        <group string="Visit Information">
+                            <field name="planned_datetime"/>
+                            <field name="visit_datetime"/>
+                            <field name="active"/>
+                        </group>
+
+                        <group string="Patient and Doctor">
+                            <field name="patient_id"/>
+                            <field name="doctor_id"/>
+                            <field name="disease_id"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Summary">
+                            <field name="summary"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_hospital_appointment_calendar" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.calendar</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <calendar string="Appointments"
+                      date_start="planned_datetime"
+                      date_stop="visit_datetime"
+                      color="doctor_id">
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="disease_id"/>
+                <field name="status"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="view_hr_hospital_appointment_search" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.search</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="patient_id"/>
+                <field name="doctor_id"/>
+                <field name="disease_id"/>
+                <field name="status"/>
+
+                <filter name="planned"
+                        string="Planned"
+                        domain="[('status', '=', 'planned')]"/>
+
+                <filter name="done"
+                        string="Completed"
+                        domain="[('status', '=', 'done')]"/>
+
+                <filter name="cancelled"
+                        string="Cancelled"
+                        domain="[('status', '=', 'cancelled')]"/>
+
+                <filter name="current_year"
+                        string="Current Year"
+                        domain="[('planned_datetime', '&gt;=', context_today().strftime('%Y-01-01 00:00:00')), ('planned_datetime', '&lt;=', context_today().strftime('%Y-12-31 23:59:59'))]"/>
+
+                <separator/>
+
+                <filter name="group_by_status"
+                        string="Status"
+                        context="{'group_by': 'status'}"/>
+
+                <filter name="group_by_doctor"
+                        string="Doctor"
+                        context="{'group_by': 'doctor_id'}"/>
+
+                <filter name="group_by_month"
+                        string="Month"
+                        context="{'group_by': 'planned_datetime:month'}"/>
+
+                <searchpanel>
+                    <field name="doctor_id"
+                           string="Doctor"
+                           enable_counters="1"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_hr_hospital_appointment_pivot" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.pivot</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <pivot string="Appointments Analysis">
+                <field name="doctor_id" type="row"/>
+                <field name="planned_datetime" type="row" interval="month"/>
+                <field name="status" type="col"/>
+            </pivot>
+        </field>
+    </record>
+
+    <record id="view_hr_hospital_appointment_graph" model="ir.ui.view">
+        <field name="name">hr.hospital.appointment.graph</field>
+        <field name="model">hr.hospital.appointment</field>
+        <field name="arch" type="xml">
+            <graph string="Appointments by Month and Disease"
+                   type="bar"
+                   stacked="1">
+                <field name="planned_datetime" interval="month"/>
+                <field name="disease_id" type="col"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_hr_hospital_appointment" model="ir.actions.act_window">
+        <field name="name">Appointments</field>
+        <field name="res_model">hr.hospital.appointment</field>
+        <field name="view_mode">list,form,calendar,pivot,graph</field>
+        <field name="search_view_id" ref="view_hr_hospital_appointment_search"/>
+        <field name="context">{'search_default_current_year': 1}</field>
+    </record>
+</odoo>
