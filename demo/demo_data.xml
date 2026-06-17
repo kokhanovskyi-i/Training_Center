@@ -126,7 +126,7 @@
         <field name="teacher_id" ref="teacher_ivanenko"/>
         <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Introduction to Python syntax and variables.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Вступ до синтаксису Python та змінних.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_petrenko_python_done" model="training.center.lesson">
@@ -136,7 +136,7 @@
         <field name="teacher_id" ref="teacher_ivanenko"/>
         <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;The student completed basic Python exercises.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Студент виконав базові вправи з Python.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_hrytsenko_odoo_planned" model="training.center.lesson">
@@ -145,7 +145,7 @@
         <field name="teacher_id" ref="teacher_shevchenko"/>
         <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Planned lesson about Odoo models and fields.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Заплановане заняття про моделі та поля Odoo.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_hrytsenko_odoo_done" model="training.center.lesson">
@@ -155,7 +155,7 @@
         <field name="teacher_id" ref="teacher_shevchenko"/>
         <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;The lesson about Odoo views was completed.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Заняття про представлення Odoo виконано.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_moroz_web_cancelled" model="training.center.lesson">
@@ -164,7 +164,7 @@
         <field name="teacher_id" ref="teacher_melnyk"/>
         <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;The web development lesson was cancelled by the student.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Заняття з веб-розробки скасовано студентом.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_moroz_web_planned" model="training.center.lesson">
@@ -173,7 +173,7 @@
         <field name="teacher_id" ref="teacher_melnyk"/>
         <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;Planned HTML and CSS practice lesson.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Заплановане практичне заняття з HTML та CSS.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_petrenko_odoo_done" model="training.center.lesson">
@@ -183,7 +183,7 @@
         <field name="teacher_id" ref="teacher_shevchenko"/>
         <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Additional completed Odoo lesson.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Додаткове виконане заняття з Odoo.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_hrytsenko_python_planned" model="training.center.lesson">
@@ -192,7 +192,7 @@
         <field name="teacher_id" ref="teacher_ivanenko"/>
         <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Planned Python follow-up lesson.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Заплановане додаткове заняття з Python.&lt;/p&gt;</field>
     </record>
 
     <record id="lesson_moroz_web_done" model="training.center.lesson">
@@ -202,6 +202,6 @@
         <field name="teacher_id" ref="teacher_bondarenko"/>
         <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;The student completed CSS selectors practice.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Студент виконав практику з CSS-селекторами.&lt;/p&gt;</field>
     </record>
 </odoo>

@@ -72,19 +72,19 @@
                                             <main>
                                                 <field class="fw-bold fs-5" name="name"/>
                                                 <div>
-                                                    <span>Specialty: </span>
+                                                    <span>Спеціалізація:</span><span> </span>
                                                     <field name="specialty"/>
                                                 </div>
                                                 <div>
-                                                    <span>Category: </span>
+                                                    <span>Категорія: </span>
                                                     <field name="category_id"/>
                                                 </div>
                                                 <div>
-                                                    <span>Email: </span>
+                                                    <span>Електронна пошта:</span><span> </span>
                                                     <field name="email"/>
                                                 </div>
                                                 <div>
-                                                    <span>Phone: </span>
+                                                    <span>Телефон:</span><span> </span>
                                                     <field name="phone"/>
                                                 </div>
                                             </main>
@@ -174,28 +174,28 @@
                                     <field class="fw-bold fs-5" name="name"/>
 
                                     <div class="mt-1">
-                                        <span>Qualification: </span>
+                                        <span>Кваліфікація:</span><span> </span>
                                         <field name="category_id"/>
                                     </div>
 
                                     <div>
-                                        <span>Specialty: </span>
+                                        <span>Спеціалізація:</span><span> </span>
                                         <field name="specialty"/>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="mt-2" invisible="not is_assistant">
-                                <span class="badge text-bg-info">Assistant</span>
+                                <span class="badge text-bg-info">Асистент</span>
                             </div>
 
                             <div class="mt-2" invisible="not mentor_id">
-                                <span>Mentor: </span>
+                                <span>Наставник:</span><span> </span>
                                 <field name="mentor_id"/>
                             </div>
 
                             <div class="mt-2" invisible="not assistant_names">
-                                <strong>Assistants:</strong>
+                                <strong>Асистенти:</strong>
                                 <div>
                                     <field name="assistant_names"/>
                                 </div>
@@ -203,12 +203,12 @@
 
                             <div class="mt-2">
                                 <div invisible="not email">
-                                    <span>Email: </span>
+                                    <span>Електронна пошта:</span><span> </span>
                                     <field name="email"/>
                                 </div>
 
                                 <div invisible="not phone">
-                                    <span>Phone: </span>
+                                    <span>Телефон:</span><span> </span>
                                     <field name="phone"/>
                                 </div>
                             </div>
@@ -217,9 +217,8 @@
                         <footer>
                             <button name="action_create_lesson"
                                     type="object"
-                                    class="btn btn-primary btn-sm">
-                                Create Lesson
-                            </button>
+                                    class="btn btn-primary btn-sm"
+                                    string="Create Lesson"/>
 
                             <a type="open"
                                role="button"
