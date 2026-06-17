@@ -677,3 +677,34 @@ msgstr "Користувач"
 #: model:res.groups,name:training_center.group_training_center_admin
 msgid "Admin"
 msgstr "Адміністратор"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_res_partner__training_center_role
+msgid "Training Center Role"
+msgstr "Роль у навчальному центрі"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_res_users__training_center_teacher_id
+msgid "Teacher Profile"
+msgstr "Профіль викладача"
+
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_res_users__training_center_student_id
+msgid "Student Profile"
+msgstr "Профіль студента"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_res_partner_form_training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_res_users_form_training_center
+msgid "Training Center"
+msgstr "Навчальний центр"
+
+#. module: training_center
+#: selection:res.partner,training_center_role:company
+msgid "Company"
+msgstr "Компанія"
+
+#. module: training_center
+#: selection:res.partner,training_center_role:other
+msgid "Other"
+msgstr "Інше"
+

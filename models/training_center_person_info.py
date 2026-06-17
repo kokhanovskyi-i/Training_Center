@@ -1,7 +1,8 @@
 from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
-from ..const import EDUCATION_LEVEL_LIST, GENDER_LIST
+
+from ..const import EDUCATION_LEVEL_LIST
 
 
 class TrainingCenterPersonInfo(models.AbstractModel):
@@ -12,7 +13,7 @@ class TrainingCenterPersonInfo(models.AbstractModel):
 
     education_level = fields.Selection(
         selection=EDUCATION_LEVEL_LIST,
-        string="Education Level",
+        string='Education Level',
     )
 
     gender = fields.Selection(

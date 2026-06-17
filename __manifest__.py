@@ -26,6 +26,8 @@
         "views/subject_report_wizard_views.xml",
         "report/training_center_teacher_report_templates.xml",
         "report/training_center_teacher_report.xml",
+        "views/training_center_res_partner_views.xml",
+        "views/training_center_res_users_views.xml",
         "views/training_center_menu.xml",
     ],
     "demo": [

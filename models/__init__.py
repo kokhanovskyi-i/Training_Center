@@ -8,3 +8,5 @@ from . import training_center_student
 from . import training_center_mass_reassign_teacher_wizard
 from . import training_center_lesson_report_wizard
 from . import training_center_subject_report_wizard
+from . import res_partner
+from . import res_users

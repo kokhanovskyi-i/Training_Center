@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_res_partner_form_training_center" model="ir.ui.view">
+        <field name="name">res.partner.form.training.center</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <group string="Training Center">
+                    <field name="training_center_role"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
