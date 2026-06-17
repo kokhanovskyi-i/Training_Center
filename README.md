@@ -1,28 +1,30 @@
-# Training Center Module
+# Training Center
 
-Training Center is a training module for Odoo 19.0
+Training Center is an educational Odoo module for managing a small training
+center.
 
-The module implements a basic hospital management system for working with teachers, students, subjects and student lessons.
+The module includes students, teachers, teacher categories, subjects, lessons,
+teacher assignment history, wizards, a printable teacher report, access rights,
+Ukrainian translation, and automated tests.
 
-## Features
+## Main features
 
-- Teachers management
-- Students management
-- Subjects management
-- Student lessons management
-- Teacher PDF report with lesson history and student list
-- Improved teacher kanban view with assistants and quick actions
-- Basic master data
-- Demo data
+- Manage students with personal, contact, and contract information.
+- Manage teachers with specialties, categories, mentors, and assistants.
+- Manage hierarchical subjects.
+- Manage lessons between students and teachers.
+- Track main teacher assignment history.
+- Reassign main teachers using a wizard.
+- Generate lesson and subject reports using wizards.
+- Print a teacher PDF report.
+- Use Training Center User and Admin security groups.
 
 ## Technical information
 
-- Odoo version: 19.0
-- Module name: training_center
-- Language: Python
-- Framework: Odoo ORM
+Module name: `training_center`
 
-## Installation
+Odoo version: `19.0`
 
+License: `OPL-1`
 
-Copy the module to the custom addons directory as training_center, update the apps list and install the Training Center module.
+Author: Ivan Kokhanovskyi

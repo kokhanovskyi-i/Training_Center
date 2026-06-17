@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <menuitem id="menu_training_center_root" name="Training Center" sequence="10"/>
+    <menuitem id="menu_training_center_root"
+          name="Training Center"
+          web_icon="training_center,static/description/icon.png"
+          sequence="10"/>
 
     <menuitem id="menu_training_center_teachers"
               name="Teachers"
@@ -8,10 +11,10 @@
               action="action_training_center_teacher"
               sequence="10"/>
 
-    <menuitem id="menu_hospital_teacher_categories"
+    <menuitem id="menu_training_center_teacher_categories"
               name="Teacher Categories"
               parent="menu_training_center_root"
-              action="action_hospital_teacher_category"
+              action="action_training_center_teacher_category"
               sequence="15"/>
 
     <menuitem id="menu_training_center_students"
@@ -20,10 +23,10 @@
               action="action_training_center_student"
               sequence="20"/>
 
-    <menuitem id="menu_hospital_teacher_history"
+    <menuitem id="menu_training_center_teacher_history"
               name="Main Teacher History"
               parent="menu_training_center_root"
-              action="action_hospital_teacher_history"
+              action="action_training_center_teacher_history"
               sequence="25"/>
 
     <menuitem id="menu_training_center_subjects"

@@ -6,10 +6,10 @@ from ..const import EDUCATION_LEVEL_LIST
 
 
 class TrainingCenterPersonInfo(models.AbstractModel):
-    """Common medical fields for teachers and students."""
+    """Common personal fields for teachers and students."""
 
     _name = 'training.center.person.info'
-    _description = 'Medical information'
+    _description = 'Personal information'
 
     education_level = fields.Selection(
         selection=EDUCATION_LEVEL_LIST,

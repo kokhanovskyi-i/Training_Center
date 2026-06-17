@@ -159,8 +159,8 @@ msgstr "Персональний лікар"
 
 #. module: training_center
 #: model:ir.model.fields,field_description:training_center.field_training_center_student__teacher_history_ids
-#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_history
-#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_history
+#: model:ir.actions.act_window,name:training_center.action_training_center_teacher_history
+#: model:ir.ui.menu,name:training_center.menu_training_center_teacher_history
 #: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
 msgid "Main Teacher History"
 msgstr "Історія персонального лікаря"
@@ -283,8 +283,8 @@ msgid "Subjects"
 msgstr "Хвороби"
 
 #. module: training_center
-#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_category
-#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_categories
+#: model:ir.actions.act_window,name:training_center.action_training_center_teacher_category
+#: model:ir.ui.menu,name:training_center.menu_training_center_teacher_categories
 msgid "Teacher Categories"
 msgstr "Категорії лікарів"
 
@@ -457,8 +457,8 @@ msgstr "Загальна інформація"
 
 #. module: training_center
 #: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
-msgid "Medical Information"
-msgstr "Медична інформація"
+msgid "Personal Information"
+msgstr "Персональна інформація"
 
 #. module: training_center
 #: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form

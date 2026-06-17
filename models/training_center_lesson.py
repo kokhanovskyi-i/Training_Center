@@ -87,7 +87,7 @@ class TrainingCenterLesson(models.Model):
         return super().write(vals)
 
     def unlink(self):
-        """Do not delete completed lessons, except for hospital admin."""
+        """Do not delete completed lessons, except for training center admin."""
         if self.env.user.has_group('training_center.group_training_center_admin'):
             return super().unlink()
 

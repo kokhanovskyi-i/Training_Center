@@ -39,7 +39,7 @@
                             <field name="user_id"/>
                         </group>
 
-                        <group string="Medical Information">
+                        <group string="Personal Information">
                             <field name="birth_date"/>
                             <field name="age"/>
                             <field name="gender"/>
