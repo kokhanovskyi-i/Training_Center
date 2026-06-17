@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <template id="report_doctor_document">
+    <template id="report_teacher_document">
         <t t-call="web.html_container">
-            <t t-foreach="docs" t-as="doctor">
+            <t t-foreach="docs" t-as="teacher">
                 <t t-call="web.external_layout">
                     <div class="page">
                         <style>
-                            .doctor-report-header {
+                            .teacher-report-header {
                                 border-bottom: 1px solid #999;
                                 padding-bottom: 10px;
                                 margin-bottom: 20px;
                             }
 
-                            .doctor-report-company-logo {
+                            .teacher-report-company-logo {
                                 max-height: 70px;
                                 max-width: 160px;
                             }
 
-                            .doctor-report-title {
+                            .teacher-report-title {
                                 margin-top: 20px;
                                 margin-bottom: 15px;
                             }
 
-                            .doctor-report-table {
+                            .teacher-report-table {
                                 width: 100%;
                                 border-collapse: collapse;
                                 margin-bottom: 25px;
                                 font-size: 12px;
                             }
 
-                            .doctor-report-table th,
-                            .doctor-report-table td {
+                            .teacher-report-table th,
+                            .teacher-report-table td {
                                 border: 1px solid #777;
                                 padding: 6px;
                                 vertical-align: top;
                             }
 
-                            .doctor-report-table th {
+                            .teacher-report-table th {
                                 background-color: #eeeeee;
                                 font-weight: bold;
                             }
 
-                            .doctor-report-footer {
+                            .teacher-report-footer {
                                 margin-top: 30px;
                                 border-top: 1px solid #999;
                                 padding-top: 8px;
@@ -49,7 +49,7 @@
                                 color: #555;
                             }
 
-                            .doctor-report-section-title {
+                            .teacher-report-section-title {
                                 margin-top: 20px;
                                 margin-bottom: 8px;
                                 font-size: 16px;
@@ -57,12 +57,12 @@
                             }
                         </style>
 
-                        <div class="doctor-report-header">
+                        <div class="teacher-report-header">
                             <div class="row">
                                 <div class="col-3">
                                     <img t-if="res_company.logo"
                                          t-att-src="image_data_uri(res_company.logo)"
-                                         class="doctor-report-company-logo"/>
+                                         class="teacher-report-company-logo"/>
                                 </div>
 
                                 <div class="col-9">
@@ -91,109 +91,109 @@
                             </div>
                         </div>
 
-                        <div class="doctor-report-title">
+                        <div class="teacher-report-title">
                             <h2>
-                                Doctor Report:
-                                <span t-field="doctor.name"/>
+                                Teacher Report:
+                                <span t-field="teacher.name"/>
                             </h2>
                             <h4>
                                 Specialty:
-                                <span t-field="doctor.specialty"/>
+                                <span t-field="teacher.specialty"/>
                             </h4>
                         </div>
 
-                        <div class="doctor-report-section-title">
-                            Visit History
+                        <div class="teacher-report-section-title">
+                            Lesson History
                         </div>
 
-                        <table class="doctor-report-table">
+                        <table class="teacher-report-table">
                             <thead>
                                 <tr>
                                     <th>Status</th>
                                     <th>Planned Date</th>
-                                    <th>Visit Date</th>
-                                    <th>Patient</th>
-                                    <th>Disease</th>
+                                    <th>Lesson Date</th>
+                                    <th>Student</th>
+                                    <th>Subject</th>
                                     <th>Summary</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-set="appointments" t-value="doctor._get_report_appointments()"/>
+                                <t t-set="lessons" t-value="teacher._get_report_lessons()"/>
 
-                                <tr t-if="not appointments">
-                                    <td colspan="6">No visits found.</td>
+                                <tr t-if="not lessons">
+                                    <td colspan="6">No lessons found.</td>
                                 </tr>
 
-                                <tr t-foreach="appointments" t-as="appointment">
-                                    <td t-att-style="doctor._get_appointment_status_style(appointment.status)">
-                                        <span t-esc="doctor._get_appointment_status_label(appointment.status)"/>
+                                <tr t-foreach="lessons" t-as="lesson">
+                                    <td t-att-style="teacher._get_lesson_status_style(lesson.status)">
+                                        <span t-esc="teacher._get_lesson_status_label(lesson.status)"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="appointment.planned_datetime"/>
+                                        <span t-field="lesson.planned_datetime"/>
                                     </td>
 
                                     <td>
-                                        <span t-if="appointment.visit_datetime"
-                                              t-field="appointment.visit_datetime"/>
+                                        <span t-if="lesson.lesson_datetime"
+                                              t-field="lesson.lesson_datetime"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="appointment.patient_id"/>
+                                        <span t-field="lesson.student_id"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="appointment.disease_id"/>
+                                        <span t-field="lesson.subject_id"/>
                                     </td>
 
                                     <td>
-                                        <div t-field="appointment.summary"/>
+                                        <div t-field="lesson.summary"/>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <div class="doctor-report-section-title">
-                            Patients
+                        <div class="teacher-report-section-title">
+                            Students
                         </div>
 
-                        <table class="doctor-report-table">
+                        <table class="teacher-report-table">
                             <thead>
                                 <tr>
-                                    <th>Patient Name</th>
+                                    <th>Student Name</th>
                                     <th>Gender</th>
                                     <th>Birth Date</th>
                                     <th>Phone</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <t t-set="patients" t-value="doctor._get_report_patients()"/>
+                                <t t-set="students" t-value="teacher._get_report_students()"/>
 
-                                <tr t-if="not patients">
-                                    <td colspan="4">No patients found.</td>
+                                <tr t-if="not students">
+                                    <td colspan="4">No students found.</td>
                                 </tr>
 
-                                <tr t-foreach="patients" t-as="patient">
+                                <tr t-foreach="students" t-as="student">
                                     <td>
-                                        <span t-field="patient.name"/>
+                                        <span t-field="student.name"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="patient.gender"/>
+                                        <span t-field="student.gender"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="patient.birth_date"/>
+                                        <span t-field="student.birth_date"/>
                                     </td>
 
                                     <td>
-                                        <span t-field="patient.phone"/>
+                                        <span t-field="student.phone"/>
                                     </td>
                                 </tr>
                             </tbody>
                         </table>
 
-                        <div class="doctor-report-footer">
+                        <div class="teacher-report-footer">
                             <div>
                                 <strong>Printed at:</strong>
                                 <span t-esc="context_timestamp(print_datetime).strftime('%d.%m.%Y %H:%M:%S')"/>

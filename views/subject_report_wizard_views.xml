@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_disease_report_wizard_form" model="ir.ui.view">
-        <field name="name">disease.report.wizard.form</field>
-        <field name="model">disease.report.wizard</field>
+    <record id="view_subject_report_wizard_form" model="ir.ui.view">
+        <field name="name">training.center.subject.report.wizard.form</field>
+        <field name="model">training.center.subject.report.wizard</field>
         <field name="arch" type="xml">
-            <form string="Disease Report">
+            <form string="Subject Report">
                 <group>
-                    <field name="doctor_ids"
+                    <field name="teacher_ids"
                            widget="many2many_tags"
-                           placeholder="Leave empty to include all doctors"/>
+                           placeholder="Leave empty to include all teachers"/>
 
-                    <field name="disease_ids"
+                    <field name="subject_ids"
                            widget="many2many_tags"
-                           placeholder="Leave empty to include all diseases"/>
+                           placeholder="Leave empty to include all subjects"/>
 
                     <field name="date_from"/>
                     <field name="date_to"/>
@@ -32,13 +32,13 @@
         </field>
     </record>
 
-    <record id="action_disease_report_wizard" model="ir.actions.act_window">
-        <field name="name">Disease Report</field>
-        <field name="res_model">disease.report.wizard</field>
+    <record id="action_subject_report_wizard" model="ir.actions.act_window">
+        <field name="name">Subject Report</field>
+        <field name="res_model">training.center.subject.report.wizard</field>
         <field name="view_mode">form</field>
-        <field name="view_id" ref="view_disease_report_wizard_form"/>
+        <field name="view_id" ref="view_subject_report_wizard_form"/>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="model_hr_hospital_doctor"/>
+        <field name="binding_model_id" ref="model_training_center_teacher"/>
         <field name="binding_type">report</field>
         <field name="binding_view_types">list,form</field>
     </record>

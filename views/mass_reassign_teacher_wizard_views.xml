@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_mass_reassign_doctor_wizard_form" model="ir.ui.view">
-        <field name="name">mass.reassign.doctor.wizard.form</field>
-        <field name="model">mass.reassign.doctor.wizard</field>
+    <record id="view_mass_reassign_teacher_wizard_form" model="ir.ui.view">
+        <field name="name">training.center.mass.reassign.teacher.wizard.form</field>
+        <field name="model">training.center.mass.reassign.teacher.wizard</field>
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="new_doctor_id"/>
+                    <field name="new_teacher_id"/>
                     <field name="change_date"/>
                 </group>
 
                 <footer>
-                    <button name="action_reassign_doctor"
+                    <button name="action_reassign_teacher"
                             string="Reassign"
                             type="object"
                             class="btn-primary"/>
@@ -23,12 +23,12 @@
         </field>
     </record>
 
-    <record id="action_mass_reassign_doctor_wizard" model="ir.actions.act_window">
-        <field name="name">Reassign Personal Doctor</field>
-        <field name="res_model">mass.reassign.doctor.wizard</field>
+    <record id="action_mass_reassign_teacher_wizard" model="ir.actions.act_window">
+        <field name="name">Reassign Main Teacher</field>
+        <field name="res_model">training.center.mass.reassign.teacher.wizard</field>
         <field name="view_mode">form</field>
         <field name="target">new</field>
-        <field name="binding_model_id" ref="model_hr_hospital_patient"/>
+        <field name="binding_model_id" ref="model_training_center_student"/>
         <field name="binding_view_types">list</field>
     </record>
 </odoo>

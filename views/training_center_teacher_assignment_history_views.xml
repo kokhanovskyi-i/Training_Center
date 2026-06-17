@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_hospital_teacher_history_list" model="ir.ui.view">
+        <field name="name">training.center.teacher.assignment.history.list</field>
+        <field name="model">training.center.teacher.assignment.history</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="student_id"/>
+                <field name="teacher_id"/>
+                <field name="assignment_date"/>
+                <field name="teacher_change_date"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_hospital_teacher_history_form" model="ir.ui.view">
+        <field name="name">training.center.teacher.assignment.history.form</field>
+        <field name="model">training.center.teacher.assignment.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="student_id"/>
+                        <field name="teacher_id"/>
+                        <field name="assignment_date"/>
+                        <field name="teacher_change_date"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hospital_teacher_history" model="ir.actions.act_window">
+        <field name="name">Main Teacher History</field>
+        <field name="res_model">training.center.teacher.assignment.history</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

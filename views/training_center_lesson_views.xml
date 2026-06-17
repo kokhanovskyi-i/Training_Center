@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_hr_hospital_appointment_list" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.list</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_list" model="ir.ui.view">
+        <field name="name">training.center.lesson.list</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
             <list>
                 <field name="planned_datetime"/>
-                <field name="visit_datetime"/>
+                <field name="lesson_datetime"/>
                 <field name="status"/>
-                <field name="patient_id"/>
-                <field name="doctor_id"/>
-                <field name="disease_id"/>
+                <field name="student_id"/>
+                <field name="teacher_id"/>
+                <field name="subject_id"/>
                 <field name="active"/>
             </list>
         </field>
     </record>
 
-    <record id="view_hr_hospital_appointment_form" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.form</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_form" model="ir.ui.view">
+        <field name="name">training.center.lesson.form</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -29,28 +29,28 @@
 
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_same_disease_visits"
+                        <button name="action_view_same_subject_lessons"
                                 type="object"
                                 class="oe_stat_button"
                                 icon="fa-stethoscope"
-                                invisible="not disease_id">
-                            <field name="same_disease_visit_count"
+                                invisible="not subject_id">
+                            <field name="same_subject_lesson_count"
                                    widget="statinfo"
-                                   string="Same Disease Visits"/>
+                                   string="Same Subject Lessons"/>
                         </button>
                     </div>
 
                     <group>
-                        <group string="Visit Information">
+                        <group string="Lesson Information">
                             <field name="planned_datetime"/>
-                            <field name="visit_datetime"/>
+                            <field name="lesson_datetime"/>
                             <field name="active"/>
                         </group>
 
-                        <group string="Patient and Doctor">
-                            <field name="patient_id"/>
-                            <field name="doctor_id"/>
-                            <field name="disease_id"/>
+                        <group string="Student and Teacher">
+                            <field name="student_id"/>
+                            <field name="teacher_id"/>
+                            <field name="subject_id"/>
                         </group>
                     </group>
 
@@ -64,30 +64,30 @@
         </field>
     </record>
 
-    <record id="view_hr_hospital_appointment_calendar" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.calendar</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_calendar" model="ir.ui.view">
+        <field name="name">training.center.lesson.calendar</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
-            <calendar string="Appointments"
+            <calendar string="Lessons"
                       date_start="planned_datetime"
-                      date_stop="visit_datetime"
-                      color="doctor_id">
-                <field name="patient_id"/>
-                <field name="doctor_id"/>
-                <field name="disease_id"/>
+                      date_stop="lesson_datetime"
+                      color="teacher_id">
+                <field name="student_id"/>
+                <field name="teacher_id"/>
+                <field name="subject_id"/>
                 <field name="status"/>
             </calendar>
         </field>
     </record>
 
-    <record id="view_hr_hospital_appointment_search" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.search</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_search" model="ir.ui.view">
+        <field name="name">training.center.lesson.search</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
             <search>
-                <field name="patient_id"/>
-                <field name="doctor_id"/>
-                <field name="disease_id"/>
+                <field name="student_id"/>
+                <field name="teacher_id"/>
+                <field name="subject_id"/>
                 <field name="status"/>
 
                 <filter name="planned"
@@ -112,53 +112,53 @@
                         string="Status"
                         context="{'group_by': 'status'}"/>
 
-                <filter name="group_by_doctor"
-                        string="Doctor"
-                        context="{'group_by': 'doctor_id'}"/>
+                <filter name="group_by_teacher"
+                        string="Teacher"
+                        context="{'group_by': 'teacher_id'}"/>
 
                 <filter name="group_by_month"
                         string="Month"
                         context="{'group_by': 'planned_datetime:month'}"/>
 
                 <searchpanel>
-                    <field name="doctor_id"
-                           string="Doctor"
+                    <field name="teacher_id"
+                           string="Teacher"
                            enable_counters="1"/>
                 </searchpanel>
             </search>
         </field>
     </record>
 
-    <record id="view_hr_hospital_appointment_pivot" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.pivot</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_pivot" model="ir.ui.view">
+        <field name="name">training.center.lesson.pivot</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
-            <pivot string="Appointments Analysis">
-                <field name="doctor_id" type="row"/>
+            <pivot string="Lessons Analysis">
+                <field name="teacher_id" type="row"/>
                 <field name="planned_datetime" type="row" interval="month"/>
                 <field name="status" type="col"/>
             </pivot>
         </field>
     </record>
 
-    <record id="view_hr_hospital_appointment_graph" model="ir.ui.view">
-        <field name="name">hr.hospital.appointment.graph</field>
-        <field name="model">hr.hospital.appointment</field>
+    <record id="view_training_center_lesson_graph" model="ir.ui.view">
+        <field name="name">training.center.lesson.graph</field>
+        <field name="model">training.center.lesson</field>
         <field name="arch" type="xml">
-            <graph string="Appointments by Month and Disease"
+            <graph string="Lessons by Month and Subject"
                    type="bar"
                    stacked="1">
                 <field name="planned_datetime" interval="month"/>
-                <field name="disease_id" type="col"/>
+                <field name="subject_id" type="col"/>
             </graph>
         </field>
     </record>
 
-    <record id="action_hr_hospital_appointment" model="ir.actions.act_window">
-        <field name="name">Appointments</field>
-        <field name="res_model">hr.hospital.appointment</field>
+    <record id="action_training_center_lesson" model="ir.actions.act_window">
+        <field name="name">Lessons</field>
+        <field name="res_model">training.center.lesson</field>
         <field name="view_mode">list,form,calendar,pivot,graph</field>
-        <field name="search_view_id" ref="view_hr_hospital_appointment_search"/>
+        <field name="search_view_id" ref="view_training_center_lesson_search"/>
         <field name="context">{'search_default_current_year': 1}</field>
     </record>
 </odoo>

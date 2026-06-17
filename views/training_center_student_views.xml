@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_hr_hospital_patient_list" model="ir.ui.view">
-        <field name="name">hr.hospital.patient.list</field>
-        <field name="model">hr.hospital.patient</field>
+    <record id="view_training_center_student_list" model="ir.ui.view">
+        <field name="name">training.center.student.list</field>
+        <field name="model">training.center.student</field>
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
@@ -10,7 +10,7 @@
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="blood_type"/>
-                <field name="personal_doctor_id"/>
+                <field name="personal_teacher_id"/>
                 <field name="insurance_policy_number"/>
                 <field name="email"/>
                 <field name="phone"/>
@@ -18,27 +18,27 @@
         </field>
     </record>
 
-    <record id="view_hr_hospital_patient_form" model="ir.ui.view">
-        <field name="name">hr.hospital.patient.form</field>
-        <field name="model">hr.hospital.patient</field>
+    <record id="view_training_center_student_form" model="ir.ui.view">
+        <field name="name">training.center.student.form</field>
+        <field name="model">training.center.student</field>
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button name="action_create_appointment"
-                            string="Create Visit"
+                    <button name="action_create_lesson"
+                            string="Create Lesson"
                             type="object"
                             class="btn-primary"/>
                 </header>
 
                 <sheet>
                     <div class="oe_button_box" name="button_box">
-                        <button name="action_view_appointments"
+                        <button name="action_view_lessons"
                                 type="object"
                                 class="oe_stat_button"
                                 icon="fa-calendar">
-                            <field name="appointment_count"
+                            <field name="lesson_count"
                                    widget="statinfo"
-                                   string="Visits"/>
+                                   string="Lessons"/>
                         </button>
                     </div>
 
@@ -59,17 +59,17 @@
                         </group>
                     </group>
 
-                    <group string="Doctors">
-                        <field name="personal_doctor_id"/>
+                    <group string="Teachers">
+                        <field name="personal_teacher_id"/>
                     </group>
 
                     <notebook>
-                        <page string="Personal Doctor History">
-                            <field name="doctor_history_ids">
+                        <page string="Main Teacher History">
+                            <field name="teacher_history_ids">
                                 <list editable="bottom">
-                                    <field name="doctor_id"/>
+                                    <field name="teacher_id"/>
                                     <field name="assignment_date"/>
-                                    <field name="doctor_change_date"/>
+                                    <field name="teacher_change_date"/>
                                     <field name="active"/>
                                 </list>
                             </field>
@@ -80,26 +80,26 @@
         </field>
     </record>
 
-    <record id="view_hr_hospital_patient_search" model="ir.ui.view">
-        <field name="name">hr.hospital.patient.search</field>
-        <field name="model">hr.hospital.patient</field>
+    <record id="view_training_center_student_search" model="ir.ui.view">
+        <field name="name">training.center.student.search</field>
+        <field name="model">training.center.student</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name"
-                       string="Patient Name"
+                       string="Student Name"
                        filter_domain="[('name', 'ilike', self)]"/>
 
                 <field name="phone"
                        string="Phone"
                        filter_domain="[('phone', 'ilike', self)]"/>
 
-                <field name="personal_doctor_id"/>
+                <field name="personal_teacher_id"/>
 
                 <separator/>
 
-                <filter name="group_by_personal_doctor"
-                        string="Personal Doctor"
-                        context="{'group_by': 'personal_doctor_id'}"/>
+                <filter name="group_by_personal_teacher"
+                        string="Main Teacher"
+                        context="{'group_by': 'personal_teacher_id'}"/>
 
                 <filter name="group_by_gender"
                         string="Gender"
@@ -108,10 +108,10 @@
         </field>
     </record>
 
-    <record id="action_hr_hospital_patient" model="ir.actions.act_window">
-        <field name="name">Patients</field>
-        <field name="res_model">hr.hospital.patient</field>
+    <record id="action_training_center_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">training.center.student</field>
         <field name="view_mode">list,form</field>
-        <field name="search_view_id" ref="view_hr_hospital_patient_search"/>
+        <field name="search_view_id" ref="view_training_center_student_search"/>
     </record>
 </odoo>

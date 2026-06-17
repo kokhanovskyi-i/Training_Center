@@ -1,11 +1,11 @@
 from odoo import fields, models
 
 
-class HospitalDoctorCategory(models.Model):
-    """Keep doctor categories and their order."""
+class TrainingCenterTeacherCategory(models.Model):
+    """Keep teacher categories and their order."""
 
-    _name = 'hospital.doctor.category'
-    _description = 'Doctor category'
+    _name = 'training.center.teacher.category'
+    _description = 'Teacher category'
     _order = 'sequence, name'
 
     name = fields.Char(
@@ -19,13 +19,13 @@ class HospitalDoctorCategory(models.Model):
         default=10,
     )
 
-    doctor_ids = fields.One2many(
-        comodel_name='hr.hospital.doctor',
+    teacher_ids = fields.One2many(
+        comodel_name='training.center.teacher',
         inverse_name='category_id',
-        string='Doctors',
+        string='Teachers',
     )
 
     _name_unique = models.Constraint(
         'unique (name)',
-        'Doctor category name must be unique.',
+        'Teacher category name must be unique.',
     )

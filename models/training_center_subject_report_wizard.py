@@ -6,20 +6,26 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
 
 
-class HrHospitalDiseaseReportWizard(models.TransientModel):
-    """Wizard for report by diseases and visits."""
+class TrainingCenterSubjectReportWizard(models.TransientModel):
+    """Wizard for report by subjects and lessons."""
 
-    _name = 'disease.report.wizard'
-    _description = 'Disease Report Wizard'
+    _name = 'training.center.subject.report.wizard'
+    _description = 'Subject Report Wizard'
 
-    doctor_ids = fields.Many2many(
-        comodel_name='hr.hospital.doctor',
-        string='Doctors',
+    teacher_ids = fields.Many2many(
+        comodel_name='training.center.teacher',
+        relation='tc_subject_report_teacher_rel',
+        column1='wizard_id',
+        column2='teacher_id',
+        string='Teachers',
     )
 
-    disease_ids = fields.Many2many(
-        comodel_name='hr.hospital.disease',
-        string='Diseases',
+    subject_ids = fields.Many2many(
+        comodel_name='training.center.subject',
+        relation='tc_subject_report_subject_rel',
+        column1='wizard_id',
+        column2='subject_id',
+        string='Subjects',
     )
 
     date_from = fields.Date(
@@ -36,13 +42,13 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
 
     @api.model
     def default_get(self, fields_list):
-        """Fill doctors automatically when wizard is opened from doctors."""
+        """Fill teachers automatically when wizard is opened from teachers."""
         result = super().default_get(fields_list)
 
-        if self.env.context.get('active_model') == 'hr.hospital.doctor':
+        if self.env.context.get('active_model') == 'training.center.teacher':
             active_ids = self.env.context.get('active_ids', [])
             if active_ids:
-                result['doctor_ids'] = [(6, 0, active_ids)]
+                result['teacher_ids'] = [(6, 0, active_ids)]
 
         return result
 
@@ -54,16 +60,16 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
                 raise ValidationError(_('Date From cannot be later than Date To.'))
 
     def action_show_report(self):
-        """Open visits by selected doctors, diseases and dates."""
+        """Open lessons by selected teachers, subjects and dates."""
         self.ensure_one()
 
         domain = []
 
-        if self.doctor_ids:
-            domain.append(('doctor_id', 'in', self.doctor_ids.ids))
+        if self.teacher_ids:
+            domain.append(('teacher_id', 'in', self.teacher_ids.ids))
 
-        if self.disease_ids:
-            domain.append(('disease_id', 'in', self.disease_ids.ids))
+        if self.subject_ids:
+            domain.append(('subject_id', 'in', self.subject_ids.ids))
 
         if self.date_from:
             date_from = datetime.combine(self.date_from, time.min)
@@ -75,12 +81,12 @@ class HrHospitalDiseaseReportWizard(models.TransientModel):
 
         return {
             'type': 'ir.actions.act_window',
-            'name': _('Disease Report'),
-            'res_model': 'hr.hospital.appointment',
+            'name': _('Subject Report'),
+            'res_model': 'training.center.lesson',
             'view_mode': 'list,form',
             'domain': domain,
             'context': {
-                'group_by': 'disease_id',
+                'group_by': 'subject_id',
                 'create': False,
             },
         }

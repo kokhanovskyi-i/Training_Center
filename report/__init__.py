@@ -1,1 +1,1 @@
-from . import hr_hospital_doctor_report
+from . import training_center_teacher_report

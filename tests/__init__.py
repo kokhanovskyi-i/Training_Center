@@ -1,1 +1,1 @@
-from . import test_hr_hospital_models
+from . import test_training_center_models

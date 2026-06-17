@@ -3,10 +3,10 @@ from dateutil.relativedelta import relativedelta
 from odoo import api, fields, models
 
 
-class HospitalMedicInfo(models.AbstractModel):
-    """Common medical fields for doctors and patients."""
+class TrainingCenterPersonInfo(models.AbstractModel):
+    """Common medical fields for teachers and students."""
 
-    _name = 'hospital.medic.info'
+    _name = 'training.center.person.info'
     _description = 'Medical information'
 
     blood_type = fields.Selection(

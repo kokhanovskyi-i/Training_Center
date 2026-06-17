@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="view_hr_hospital_disease_list" model="ir.ui.view">
-        <field name="name">hr.hospital.disease.list</field>
-        <field name="model">hr.hospital.disease</field>
+    <record id="view_training_center_subject_list" model="ir.ui.view">
+        <field name="name">training.center.subject.list</field>
+        <field name="model">training.center.subject</field>
         <field name="arch" type="xml">
             <list>
                 <field name="code"/>
@@ -12,14 +12,14 @@
         </field>
     </record>
 
-    <record id="view_hr_hospital_disease_form" model="ir.ui.view">
-        <field name="name">hr.hospital.disease.form</field>
-        <field name="model">hr.hospital.disease</field>
+    <record id="view_training_center_subject_form" model="ir.ui.view">
+        <field name="name">training.center.subject.form</field>
+        <field name="model">training.center.subject</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
                     <group>
-                        <group string="Disease Information">
+                        <group string="Subject Information">
                             <field name="code"/>
                             <field name="name"/>
                             <field name="parent_id"/>
@@ -27,7 +27,7 @@
                     </group>
 
                     <notebook>
-                        <page string="Child Diseases">
+                        <page string="Child Subjects">
                             <field name="child_ids">
                                 <list editable="bottom">
                                     <field name="code"/>
@@ -41,36 +41,36 @@
         </field>
     </record>
 
-    <record id="view_hr_hospital_disease_search" model="ir.ui.view">
-        <field name="name">hr.hospital.disease.search</field>
-        <field name="model">hr.hospital.disease</field>
+    <record id="view_training_center_subject_search" model="ir.ui.view">
+        <field name="name">training.center.subject.search</field>
+        <field name="model">training.center.subject</field>
         <field name="arch" type="xml">
             <search>
                 <field name="name"
-                       string="Disease"
+                       string="Subject"
                        filter_domain="['|', ('name', 'ilike', self), ('code', 'ilike', self)]"/>
 
                 <field name="parent_id"/>
 
                 <separator/>
 
-                <filter name="root_diseases"
-                        string="Root Diseases"
+                <filter name="root_subjects"
+                        string="Root Subjects"
                         domain="[('parent_id', '=', False)]"/>
 
-                <filter name="child_diseases"
-                        string="Child Diseases"
+                <filter name="child_subjects"
+                        string="Child Subjects"
                         domain="[('parent_id', '!=', False)]"/>
 
                 <separator/>
 
                 <filter name="group_by_parent"
-                        string="Parent Disease"
+                        string="Parent Subject"
                         context="{'group_by': 'parent_id'}"/>
 
                 <searchpanel>
                     <field name="parent_id"
-                           string="Disease Hierarchy"
+                           string="Subject Hierarchy"
                            select="one"
                            hierarchize="1"
                            enable_counters="1"/>
@@ -79,10 +79,10 @@
         </field>
     </record>
 
-    <record id="action_hr_hospital_disease" model="ir.actions.act_window">
-        <field name="name">Diseases</field>
-        <field name="res_model">hr.hospital.disease</field>
+    <record id="action_training_center_subject" model="ir.actions.act_window">
+        <field name="name">Subjects</field>
+        <field name="res_model">training.center.subject</field>
         <field name="view_mode">list,form</field>
-        <field name="search_view_id" ref="view_hr_hospital_disease_search"/>
+        <field name="search_view_id" ref="view_training_center_subject_search"/>
     </record>
 </odoo>

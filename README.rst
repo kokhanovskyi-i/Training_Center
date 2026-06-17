@@ -1,28 +1,28 @@
-HR Hospital
+Training Center
 ===========
 
-HR Hospital is an educational Odoo module for managing hospital-related data.
+Training Center is an educational Odoo module for managing hospital-related data.
 
-The module allows users to manage patients, doctors, doctor categories, diseases,
-appointments, personal doctor history, reports, access rights, translations, and
+The module allows users to manage students, teachers, teacher categories, subjects,
+lessons, main teacher history, reports, access rights, translations, and
 basic medical workflows.
 
 Features
 --------
 
-* Manage patients with personal, contact, and medical information.
-* Manage doctors with specialties, categories, mentors, and interns.
-* Manage doctor categories.
-* Manage disease classifier with hierarchical diseases.
-* Manage appointments between patients and doctors.
-* Track appointment status: planned, done, and cancelled.
-* Track personal doctor assignment history.
-* Reassign personal doctors using a wizard.
-* Generate visit and disease reports using wizards.
-* Generate a printable doctor report in PDF format.
-* Use kanban views for doctors.
-* Use dedicated HR Hospital security groups and access rules.
-* Provide Ukrainian translation for the module and disease classifier.
+* Manage students with personal, contact, and medical information.
+* Manage teachers with specialties, categories, mentors, and assistants.
+* Manage teacher categories.
+* Manage subject classifier with hierarchical subjects.
+* Manage lessons between students and teachers.
+* Track lesson status: planned, done, and cancelled.
+* Track main teacher assignment history.
+* Reassign main teachers using a wizard.
+* Generate lesson and subject reports using wizards.
+* Generate a printable teacher report in PDF format.
+* Use kanban views for teachers.
+* Use dedicated Training Center security groups and access rules.
+* Provide Ukrainian translation for the module and subject classifier.
 * Include automated model tests.
 
 Security Groups
@@ -30,24 +30,24 @@ Security Groups
 
 The module provides the following user groups:
 
-* Patient
-* Intern
-* Doctor
+* Student
+* Assistant
+* Teacher
 * Manager
 * Administrator
 
 Access rights are configured according to the role hierarchy.
 
-Patients can view only their own visits.
-Interns can view and edit their own visits.
-Doctors can view and edit their own visits and visits of their interns.
-Managers can view all visits.
+Students can view only their own lessons.
+Assistants can view and edit their own lessons.
+Teachers can view and edit their own lessons and lessons of their assistants.
+Managers can view all lessons.
 Administrators can delete any data in the module.
 
 Technical Information
 ---------------------
 
-Module name: ``hr_hospital``
+Module name: ``training_center``
 
 Odoo version: ``19.0``
 

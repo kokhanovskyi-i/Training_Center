@@ -6,11 +6,11 @@ from odoo.exceptions import ValidationError
 _logger = logging.getLogger(__name__)
 
 
-class HrHospitalDisease(models.Model):
-    """Keep diseases in a simple parent and child structure."""
+class TrainingCenterSubject(models.Model):
+    """Keep subjects in a simple parent and child structure."""
 
-    _name = 'hr.hospital.disease'
-    _description = 'Disease'
+    _name = 'training.center.subject'
+    _description = 'Subject'
     _parent_name = 'parent_id'
     _parent_store = True
     _order = 'parent_path, name'
@@ -32,16 +32,16 @@ class HrHospitalDisease(models.Model):
     )
 
     parent_id = fields.Many2one(
-        comodel_name='hr.hospital.disease',
-        string='Parent Disease',
+        comodel_name='training.center.subject',
+        string='Parent Subject',
         index=True,
         ondelete='restrict',
     )
 
     child_ids = fields.One2many(
-        comodel_name='hr.hospital.disease',
+        comodel_name='training.center.subject',
         inverse_name='parent_id',
-        string='Child Diseases',
+        string='Child Subjects',
     )
 
     parent_path = fields.Char(
@@ -50,19 +50,19 @@ class HrHospitalDisease(models.Model):
 
     @api.constrains('parent_id')
     def _check_parent_id(self):
-        """Check that disease hierarchy has no recursion."""
-        for disease in self:
-            if disease._has_cycle():
-                raise ValidationError(_('Disease hierarchy cannot be recursive.'))
+        """Check that subject hierarchy has no recursion."""
+        for subject in self:
+            if subject._has_cycle():
+                raise ValidationError(_('Subject hierarchy cannot be recursive.'))
 
     @api.depends('name', 'parent_id.display_name')
     def _compute_display_name(self):
-        """Set full name for disease with parent names."""
-        for disease in self:
-            disease.display_name = disease._get_complete_name()
+        """Set full name for subject with parent names."""
+        for subject in self:
+            subject.display_name = subject._get_complete_name()
 
     def _get_complete_name(self):
-        """Return disease name together with its parents."""
+        """Return subject name together with its parents."""
         self.ensure_one()
 
         names = []

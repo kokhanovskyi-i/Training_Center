@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * hr_hospital
+#   * training_center
 #
 msgid ""
 msgstr ""
@@ -15,675 +15,675 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. module: hr_hospital
-#: model:ir.module.category,name:hr_hospital.module_category_hr_hospital
-#: model:res.groups.privilege,name:hr_hospital.privilege_hr_hospital_roles
-msgid "HR Hospital"
+#. module: training_center
+#: model:ir.module.category,name:training_center.module_category_training_center
+#: model:res.groups.privilege,name:training_center.privilege_training_center_roles
+msgid "Training Center"
 msgstr "HR Лікарня"
 
-#. module: hr_hospital
-#: model:res.groups,name:hr_hospital.group_hr_hospital_patient
-msgid "Patient"
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_student
+msgid "Student"
 msgstr "Пацієнт"
 
-#. module: hr_hospital
-#: model:res.groups,name:hr_hospital.group_hr_hospital_intern
-msgid "Intern"
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_assistant
+msgid "Assistant"
 msgstr "Інтерн"
 
-#. module: hr_hospital
-#: model:res.groups,name:hr_hospital.group_hr_hospital_doctor
-msgid "Doctor"
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_teacher
+msgid "Teacher"
 msgstr "Лікар"
 
-#. module: hr_hospital
-#: model:res.groups,name:hr_hospital.group_hr_hospital_manager
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_manager
 msgid "Manager"
 msgstr "Менеджер"
 
-#. module: hr_hospital
-#: model:res.groups,name:hr_hospital.group_hr_hospital_admin
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_admin
 msgid "Administrator"
 msgstr "Адміністратор"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hr_hospital_appointment
-msgid "Hospital appointment"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_lesson
+msgid "Training center lesson"
 msgstr "Відвідування лікарні"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hr_hospital_patient
-msgid "Hospital patient"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_student
+msgid "Training center student"
 msgstr "Пацієнт лікарні"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hr_hospital_doctor
-msgid "Hospital doctor"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher
+msgid "Training center teacher"
 msgstr "Лікар лікарні"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hr_hospital_disease
-msgid "Disease"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_subject
+msgid "Subject"
 msgstr "Хвороба"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hospital_doctor_category
-msgid "Doctor category"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher_category
+msgid "Teacher category"
 msgstr "Категорія лікаря"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_hospital_doctor_history
-msgid "Personal doctor history"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_teacher_assignment_history
+msgid "Main teacher history"
 msgstr "Історія персонального лікаря"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_visit_report_wizard
-msgid "Visit report wizard"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_lesson_report_wizard
+msgid "Lesson report wizard"
 msgstr "Майстер звіту відвідувань"
 
-#. module: hr_hospital
-#: model:ir.model,name:hr_hospital.model_disease_report_wizard
-msgid "Disease Report Wizard"
+#. module: training_center
+#: model:ir.model,name:training_center.model_training_center_subject_report_wizard
+msgid "Subject Report Wizard"
 msgstr "Майстер звіту по хворобах"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__status
-msgid "Visit Status"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__status
+msgid "Lesson Status"
 msgstr "Статус відвідування"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_appointment__status__planned
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__planned
 msgid "Planned"
 msgstr "Заплановано"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_appointment__status__done
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__done
 msgid "Done"
 msgstr "Завершено"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hr_hospital_appointment__status__cancelled
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_lesson__status__cancelled
 msgid "Cancelled"
 msgstr "Скасовано"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__planned_datetime
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__planned_datetime
 msgid "Planned Date and Time"
 msgstr "Заплановані дата і час"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__visit_datetime
-msgid "Visit Date and Time"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__lesson_datetime
+msgid "Lesson Date and Time"
 msgstr "Дата і час відвідування"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__summary
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__summary
 msgid "Summary"
 msgstr "Підсумок"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__disease_id
-msgid "Disease"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__subject_id
+msgid "Subject"
 msgstr "Хвороба"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__same_disease_visit_count
-msgid "Same Disease Visits"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__same_subject_lesson_count
+msgid "Same Subject Lessons"
 msgstr "Відвідування з такою ж хворобою"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__specialty
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__specialty
 msgid "Specialty"
 msgstr "Спеціальність"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__category_id
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__category_id
 msgid "Category"
 msgstr "Категорія"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__user_id
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__user_id
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__user_id
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__user_id
 msgid "System User"
 msgstr "Користувач системи"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__is_intern
-msgid "Doctor Is Intern"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__is_assistant
+msgid "Teacher Is Assistant"
 msgstr "Лікар є інтерном"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__mentor_id
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__mentor_id
 msgid "Mentor"
 msgstr "Наставник"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__intern_ids
-msgid "Interns"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__assistant_ids
+msgid "Assistants"
 msgstr "Інтерни"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__intern_names
-msgid "Intern Names"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__assistant_names
+msgid "Assistant Names"
 msgstr "Імена інтернів"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__appointment_ids
-msgid "Visits"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__lesson_ids
+msgid "Lessons"
 msgstr "Відвідування"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__personal_doctor_id
-msgid "Personal Doctor"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__personal_teacher_id
+msgid "Main Teacher"
 msgstr "Персональний лікар"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__doctor_history_ids
-#: model:ir.actions.act_window,name:hr_hospital.action_hospital_doctor_history
-#: model:ir.ui.menu,name:hr_hospital.menu_hospital_doctor_history
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_patient_form
-msgid "Personal Doctor History"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__teacher_history_ids
+#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_history
+#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_history
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
+msgid "Main Teacher History"
 msgstr "Історія персонального лікаря"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__insurance_policy_number
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__insurance_policy_number
 msgid "Insurance Policy Number"
 msgstr "Номер страхового поліса"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_medic_info__blood_type
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__blood_type
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__blood_type
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__blood_type
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__blood_type
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__blood_type
 msgid "Blood Type"
 msgstr "Група крові"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_medic_info__gender
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__gender
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__gender
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__gender
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__gender
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__gender
 msgid "Gender"
 msgstr "Стать"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_medic_info__birth_date
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__birth_date
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__birth_date
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__birth_date
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__birth_date
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__birth_date
 msgid "Birth Date"
 msgstr "Дата народження"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_medic_info__age
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__age
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__age
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__age
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__age
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__age
 msgid "Age"
 msgstr "Вік"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hospital_medic_info__gender__male
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__male
 msgid "Male"
 msgstr "Чоловіча"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hospital_medic_info__gender__female
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__female
 msgid "Female"
 msgstr "Жіноча"
 
-#. module: hr_hospital
-#: model:ir.model.fields.selection,name:hr_hospital.selection__hospital_medic_info__gender__other
+#. module: training_center
+#: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__gender__other
 msgid "Other"
 msgstr "Інше"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__code
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__code
 msgid "Code"
 msgstr "Код"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__parent_id
-msgid "Parent Disease"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__parent_id
+msgid "Parent Subject"
 msgstr "Батьківська хвороба"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__child_ids
-msgid "Child Diseases"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__child_ids
+msgid "Child Subjects"
 msgstr "Дочірні хвороби"
 
-#. module: hr_hospital
-#: model:hr.hospital.disease,name:hr_hospital.disease_flu
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_flu
 msgid "Flu"
 msgstr "Грип"
 
-#. module: hr_hospital
-#: model:hr.hospital.disease,name:hr_hospital.disease_covid
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_covid
 msgid "Covid"
 msgstr "COVID-19"
 
-#. module: hr_hospital
-#: model:hr.hospital.disease,name:hr_hospital.disease_cold
+#. module: training_center
+#: model:training.center.subject,name:training_center.subject_cold
 msgid "Cold"
 msgstr "Застуда"
 
-#. module: hr_hospital
-#: model:hospital.doctor.category,name:hr_hospital.doctor_category_intern
-msgid "Intern Doctor"
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_assistant
+msgid "Assistant Teacher"
 msgstr "Лікар-інтерн"
 
-#. module: hr_hospital
-#: model:hospital.doctor.category,name:hr_hospital.doctor_category_specialist
-msgid "Specialist Doctor"
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_specialist
+msgid "Specialist Teacher"
 msgstr "Лікар-спеціаліст"
 
-#. module: hr_hospital
-#: model:hospital.doctor.category,name:hr_hospital.doctor_category_highest
-msgid "Highest Category Doctor"
+#. module: training_center
+#: model:training.center.teacher.category,name:training_center.teacher_category_highest
+msgid "Highest Category Teacher"
 msgstr "Лікар вищої категорії"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_hr_hospital_appointment
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_appointments
-msgid "Appointments"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_lesson
+#: model:ir.ui.menu,name:training_center.menu_training_center_lessons
+msgid "Lessons"
 msgstr "Відвідування"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_hr_hospital_patient
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_patients
-msgid "Patients"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_student
+#: model:ir.ui.menu,name:training_center.menu_training_center_students
+msgid "Students"
 msgstr "Пацієнти"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_hr_hospital_doctor
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_doctors
-msgid "Doctors"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_teacher
+#: model:ir.ui.menu,name:training_center.menu_training_center_teachers
+msgid "Teachers"
 msgstr "Лікарі"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_hr_hospital_disease
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_diseases
-msgid "Diseases"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_training_center_subject
+#: model:ir.ui.menu,name:training_center.menu_training_center_subjects
+msgid "Subjects"
 msgstr "Хвороби"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_hospital_doctor_category
-#: model:ir.ui.menu,name:hr_hospital.menu_hospital_doctor_categories
-msgid "Doctor Categories"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_hospital_teacher_category
+#: model:ir.ui.menu,name:training_center.menu_hospital_teacher_categories
+msgid "Teacher Categories"
 msgstr "Категорії лікарів"
 
-#. module: hr_hospital
-#: model:ir.ui.menu,name:hr_hospital.menu_hr_hospital_root
-msgid "Hospital"
+#. module: training_center
+#: model:ir.ui.menu,name:training_center.menu_training_center_root
+msgid "Training Center"
 msgstr "Лікарня"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_visit_report_wizard
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_report_wizard_form
-msgid "Visit Report"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_lesson_report_wizard
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+msgid "Lesson Report"
 msgstr "Звіт відвідувань"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_disease_report_wizard
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_disease_report_wizard_form
-msgid "Disease Report"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_subject_report_wizard
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
+msgid "Subject Report"
 msgstr "Звіт по хворобах"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_report_wizard_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_disease_report_wizard_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
 msgid "Show Report"
 msgstr "Показати звіт"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_report_wizard_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_disease_report_wizard_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
 msgid "Cancel"
 msgstr "Скасувати"
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_patient.py:0
-#: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
-msgid "Create Visit"
+#. module: training_center
+#: code:addons/training_center/models/training_center_student.py:0
+#: code:addons/training_center/models/training_center_teacher.py:0
+msgid "Create Lesson"
 msgstr "Створити відвідування"
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_patient.py:0
-msgid "Patient Visits"
+#. module: training_center
+#: code:addons/training_center/models/training_center_student.py:0
+msgid "Student Lessons"
 msgstr "Відвідування пацієнта"
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_appointment.py:0
-msgid "Visits With Same Disease"
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "Lessons With Same Subject"
 msgstr "Відвідування з такою ж хворобою"
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_appointment.py:0
-msgid "You cannot change date, time or doctor for a completed visit."
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot change date, time or teacher for a completed lesson."
 msgstr "Не можна змінювати дату, час або лікаря для завершеного відвідування."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_appointment.py:0
-msgid "You cannot archive completed visits."
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot archive completed lessons."
 msgstr "Не можна архівувати завершені відвідування."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_appointment.py:0
-msgid "You cannot delete completed visits."
+#. module: training_center
+#: code:addons/training_center/models/training_center_lesson.py:0
+msgid "You cannot delete completed lessons."
 msgstr "Не можна видаляти завершені відвідування."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_doctor.py:0
-msgid "Mentor cannot be an intern."
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher.py:0
+msgid "Mentor cannot be an assistant."
 msgstr "Наставник не може бути інтерном."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_doctor_history.py:0
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher_assignment_history.py:0
 msgid "Warning"
 msgstr "Попередження"
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_doctor_history.py:0
-msgid "Doctor change date cannot be earlier than assignment date."
+#. module: training_center
+#: code:addons/training_center/models/training_center_teacher_assignment_history.py:0
+msgid "Teacher change date cannot be earlier than assignment date."
 msgstr "Дата зміни лікаря не може бути раніше ніж дата призначення."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_disease_report_wizard.py:0
+#. module: training_center
+#: code:addons/training_center/models/training_center_subject_report_wizard.py:0
 msgid "Date From cannot be later than Date To."
 msgstr "Дата початку не може бути пізнішою за дату завершення."
 
-#. module: hr_hospital
-#: code:addons/hr_hospital/models/hr_hospital_disease.py:0
-msgid "Disease hierarchy cannot be recursive."
+#. module: training_center
+#: code:addons/training_center/models/training_center_subject.py:0
+msgid "Subject hierarchy cannot be recursive."
 msgstr "Ієрархія хвороб не може бути рекурсивною."
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Doctor Report"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Teacher Report"
 msgstr "Звіт по лікарю"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Visit History"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Lesson History"
 msgstr "Історія відвідувань"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Patients of this Doctor"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Students of this Teacher"
 msgstr "Пацієнти цього лікаря"
 
-#. module: hr_hospital
-#: model:ir.actions.report,name:hr_hospital.action_report_hr_hospital_doctor
-msgid "Doctor Report"
+#. module: training_center
+#: model:ir.actions.report,name:training_center.action_report_training_center_teacher
+msgid "Teacher Report"
 msgstr "Звіт по лікарю"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_form
-msgid "Visit Information"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Lesson Information"
 msgstr "Інформація про відвідування"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_form
-msgid "Patient and Doctor"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Student and Teacher"
 msgstr "Пацієнт і лікар"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_search
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
 msgid "Completed"
 msgstr "Завершено"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_search
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
 msgid "Current Year"
 msgstr "Поточний рік"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_search
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Status"
 msgstr "Статус"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_search
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_search
 msgid "Month"
 msgstr "Місяць"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_pivot
-msgid "Appointments Analysis"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_pivot
+msgid "Lessons Analysis"
 msgstr "Аналіз відвідувань"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_appointment_graph
-msgid "Appointments by Month and Disease"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_graph
+msgid "Lessons by Month and Subject"
 msgstr "Відвідування за місяцем і хворобою"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_disease_form
-msgid "Disease Information"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_form
+msgid "Subject Information"
 msgstr "Інформація про хворобу"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_disease_search
-msgid "Root Diseases"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_search
+msgid "Root Subjects"
 msgstr "Кореневі хвороби"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_disease_search
-msgid "Disease Hierarchy"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_subject_search
+msgid "Subject Hierarchy"
 msgstr "Ієрархія хвороб"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_patient_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
 msgid "General Information"
 msgstr "Загальна інформація"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
 msgid "Medical Information"
 msgstr "Медична інформація"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_patient_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_form
 msgid "Contacts"
 msgstr "Контакти"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
 msgid "Mentor Information"
 msgstr "Інформація про наставника"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Specialty:"
 msgstr "Спеціальність:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
 msgid "Category:"
 msgstr "Категорія:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Email:"
 msgstr "Електронна пошта:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_form
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_form
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Phone:"
 msgstr "Телефон:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_search
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_search
 msgid "Mentors"
 msgstr "Наставники"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_search
-msgid "Intern Status"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_search
+msgid "Assistant Status"
 msgstr "Статус інтерна"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
 msgid "Open"
 msgstr "Відкрити"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
 msgid "Delete"
 msgstr "Видалити"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
 msgid "Qualification:"
 msgstr "Кваліфікація:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
 msgid "Mentor:"
 msgstr "Наставник:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_doctor_kanban
-msgid "Interns:"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_teacher_kanban
+msgid "Assistants:"
 msgstr "Інтерни:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_patient_search
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Patient Name"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Student Name"
 msgstr "Ім'я пацієнта"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_mass_reassign_doctor_wizard_form
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_mass_reassign_teacher_wizard_form
 msgid "Reassign"
 msgstr "Перепризначити"
 
-#. module: hr_hospital
-#: model:ir.actions.act_window,name:hr_hospital.action_mass_reassign_doctor_wizard
-msgid "Reassign Personal Doctor"
+#. module: training_center
+#: model:ir.actions.act_window,name:training_center.action_mass_reassign_teacher_wizard
+msgid "Reassign Main Teacher"
 msgstr "Перепризначити персонального лікаря"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_visit_report_wizard_form
-msgid "Show Visits"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
+msgid "Show Lessons"
 msgstr "Показати відвідування"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Website:"
 msgstr "Вебсайт:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "City:"
 msgstr "Місто:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Doctor Report:"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Teacher Report:"
 msgstr "Звіт по лікарю:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Planned Date"
 msgstr "Запланована дата"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "Visit Date"
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "Lesson Date"
 msgstr "Дата відвідування"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "No visits found."
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "No lessons found."
 msgstr "Відвідування не знайдено."
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
-msgid "No patients found."
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
+msgid "No students found."
 msgstr "Пацієнтів не знайдено."
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Printed at:"
 msgstr "Надруковано:"
 
-#. module: hr_hospital
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Company city:"
 msgstr "Місто компанії:"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__phone
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__phone
-#: model_terms:ir.ui.view,arch_db:hr_hospital.view_hr_hospital_patient_search
-#: model_terms:ir.ui.view,arch_db:hr_hospital.report_doctor_document
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__phone
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__phone
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_student_search
+#: model_terms:ir.ui.view,arch_db:training_center.report_teacher_document
 msgid "Phone"
 msgstr "Телефон"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__email
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__email
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__email
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__email
 msgid "Email"
 msgstr "Електронна пошта"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_disease__name
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_doctor__name
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_patient__name
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_doctor_category__name
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_subject__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__name
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_category__name
 msgid "Name"
 msgstr "Ім'я"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hr_hospital_appointment__active
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_doctor_history__active
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_lesson__active
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__active
 msgid "Active"
 msgstr "Активний"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_disease_report_wizard__date_from
-#: model:ir.model.fields,field_description:hr_hospital.field_visit_report_wizard__date_from
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_subject_report_wizard__date_from
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__date_from
 msgid "Date From"
 msgstr "Дата з"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_disease_report_wizard__date_to
-#: model:ir.model.fields,field_description:hr_hospital.field_visit_report_wizard__date_to
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_subject_report_wizard__date_to
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__date_to
 msgid "Date To"
 msgstr "Дата по"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_doctor_category__sequence
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_category__sequence
 msgid "Sequence"
 msgstr "Послідовність"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_doctor_history__assignment_date
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__assignment_date
 msgid "Assignment Date"
 msgstr "Дата призначення"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_hospital_doctor_history__doctor_change_date
-msgid "Doctor Change Date"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher_assignment_history__teacher_change_date
+msgid "Teacher Change Date"
 msgstr "Дата зміни лікаря"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_mass_reassign_doctor_wizard__new_doctor_id
-msgid "New Doctor"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_mass_reassign_teacher_wizard__new_teacher_id
+msgid "New Teacher"
 msgstr "Новий лікар"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_mass_reassign_doctor_wizard__change_date
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_mass_reassign_teacher_wizard__change_date
 msgid "Change Date"
 msgstr "Дата зміни"
 
-#. module: hr_hospital
-#: model:ir.model.fields,field_description:hr_hospital.field_visit_report_wizard__only_done
-msgid "Only Completed Visits"
+#. module: training_center
+#: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__only_done
+msgid "Only Completed Lessons"
 msgstr "Тільки завершені відвідування"
