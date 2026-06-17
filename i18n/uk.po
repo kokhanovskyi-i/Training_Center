@@ -166,16 +166,16 @@ msgid "Main Teacher History"
 msgstr "Історія персонального лікаря"
 
 #. module: training_center
-#: model:ir.model.fields,field_description:training_center.field_training_center_student__insurance_policy_number
-msgid "Insurance Policy Number"
-msgstr "Номер страхового поліса"
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__contract_number
+msgid "Contract Number"
+msgstr "Номер договору"
 
 #. module: training_center
-#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__blood_type
-#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__blood_type
-#: model:ir.model.fields,field_description:training_center.field_training_center_student__blood_type
-msgid "Blood Type"
-msgstr "Група крові"
+#: model:ir.model.fields,field_description:training_center.field_training_center_person_info__education_level
+#: model:ir.model.fields,field_description:training_center.field_training_center_teacher__education_level
+#: model:ir.model.fields,field_description:training_center.field_training_center_student__education_level
+msgid "Education Level"
+msgstr "Рівень освіти"
 
 #. module: training_center
 #: model:ir.model.fields,field_description:training_center.field_training_center_person_info__gender

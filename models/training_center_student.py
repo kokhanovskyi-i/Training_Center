@@ -41,8 +41,8 @@ class TrainingCenterStudent(models.Model):
         string='Main Teacher History',
     )
 
-    insurance_policy_number = fields.Char(
-        string='Insurance Policy Number',
+    contract_number = fields.Char(
+        string='Contract Number',
         size=20,
     )
 

@@ -14,7 +14,7 @@
                 <field name="birth_date"/>
                 <field name="age"/>
                 <field name="gender"/>
-                <field name="blood_type"/>
+                <field name="education_level"/>
                 <field name="email"/>
                 <field name="phone"/>
             </list>
@@ -43,7 +43,7 @@
                             <field name="birth_date"/>
                             <field name="age"/>
                             <field name="gender"/>
-                            <field name="blood_type"/>
+                            <field name="education_level"/>
                         </group>
                     </group>
 

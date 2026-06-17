@@ -1,6 +1,7 @@
 from dateutil.relativedelta import relativedelta
 
 from odoo import api, fields, models
+from ..const import EDUCATION_LEVEL_LIST, GENDER_LIST
 
 
 class TrainingCenterPersonInfo(models.AbstractModel):
@@ -9,18 +10,9 @@ class TrainingCenterPersonInfo(models.AbstractModel):
     _name = 'training.center.person.info'
     _description = 'Medical information'
 
-    blood_type = fields.Selection(
-        selection=[
-            ('o_positive', 'O(I) Rh+'),
-            ('o_negative', 'O(I) Rh-'),
-            ('a_positive', 'A(II) Rh+'),
-            ('a_negative', 'A(II) Rh-'),
-            ('b_positive', 'B(III) Rh+'),
-            ('b_negative', 'B(III) Rh-'),
-            ('ab_positive', 'AB(IV) Rh+'),
-            ('ab_negative', 'AB(IV) Rh-'),
-        ],
-        string='Blood Type',
+    education_level = fields.Selection(
+        selection=EDUCATION_LEVEL_LIST,
+        string="Education Level",
     )
 
     gender = fields.Selection(

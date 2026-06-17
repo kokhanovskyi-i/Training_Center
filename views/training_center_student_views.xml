@@ -9,9 +9,9 @@
                 <field name="birth_date"/>
                 <field name="age"/>
                 <field name="gender"/>
-                <field name="blood_type"/>
+                <field name="education_level"/>
                 <field name="personal_teacher_id"/>
-                <field name="insurance_policy_number"/>
+                <field name="contract_number"/>
                 <field name="email"/>
                 <field name="phone"/>
             </list>
@@ -48,14 +48,14 @@
                             <field name="birth_date"/>
                             <field name="age"/>
                             <field name="gender"/>
-                            <field name="blood_type"/>
+                            <field name="education_level"/>
                         </group>
 
                         <group string="Contacts">
                             <field name="email"/>
                             <field name="phone"/>
                             <field name="user_id"/>
-                            <field name="insurance_policy_number"/>
+                            <field name="contract_number"/>
                         </group>
                     </group>
 

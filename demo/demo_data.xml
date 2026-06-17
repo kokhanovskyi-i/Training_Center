@@ -1,261 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="teacher_hlus" model="training.center.teacher">
-        <field name="name">Dr. Hlus</field>
-        <field name="specialty">Diagnostics</field>
+    <!-- Teachers -->
+    <record id="teacher_ivanenko" model="training.center.teacher">
+        <field name="name">Olena Ivanenko</field>
+        <field name="specialty">Python Programming</field>
         <field name="category_id" ref="teacher_category_highest"/>
-        <field name="birth_date">1959-05-15</field>
-        <field name="gender">male</field>
-        <field name="blood_type">o_positive</field>
+        <field name="birth_date">1982-04-12</field>
+        <field name="gender">female</field>
+        <field name="education_level">phd</field>
         <field name="user_id" ref="base.user_admin"/>
-        <field name="email">house@example.com</field>
+        <field name="email">olena.ivanenko@example.com</field>
         <field name="phone">+380671111111</field>
     </record>
 
-    <record id="teacher_clus" model="training.center.teacher">
-        <field name="name">Dr. Clus</field>
-        <field name="specialty">Diagnostics</field>
+    <record id="teacher_shevchenko" model="training.center.teacher">
+        <field name="name">Andrii Shevchenko</field>
+        <field name="specialty">Odoo Functional Consulting</field>
         <field name="category_id" ref="teacher_category_specialist"/>
-        <field name="birth_date">1980-03-21</field>
+        <field name="birth_date">1987-08-23</field>
+        <field name="gender">male</field>
+        <field name="education_level">master</field>
+        <field name="email">andrii.shevchenko@example.com</field>
+        <field name="phone">+380672222222</field>
+    </record>
+
+    <record id="teacher_melnyk" model="training.center.teacher">
+        <field name="name">Iryna Melnyk</field>
+        <field name="specialty">Web Development</field>
+        <field name="category_id" ref="teacher_category_specialist"/>
+        <field name="birth_date">1990-02-17</field>
         <field name="gender">female</field>
-        <field name="blood_type">a_positive</field>
-        <field name="email">dr_clus@example.com</field>
-        <field name="phone">+380671234567</field>
+        <field name="education_level">master</field>
+        <field name="email">iryna.melnyk@example.com</field>
+        <field name="phone">+380673333333</field>
     </record>
 
-    <record id="teacher_plus" model="training.center.teacher">
-        <field name="name">Dr. Plus</field>
-        <field name="specialty">Diagnostics</field>
+    <record id="teacher_bondarenko" model="training.center.teacher">
+        <field name="name">Maksym Bondarenko</field>
+        <field name="specialty">Python Assistant</field>
         <field name="category_id" ref="teacher_category_assistant"/>
-        <field name="birth_date">1997-09-10</field>
+        <field name="mentor_id" ref="teacher_ivanenko"/>
+        <field name="birth_date">1998-01-11</field>
         <field name="gender">male</field>
-        <field name="blood_type">b_negative</field>
-        <field name="mentor_id" ref="teacher_hlus"/>
-        <field name="email">dr_plus@example.com</field>
-        <field name="phone">+380671234567</field>
+        <field name="education_level">bachelor</field>
+        <field name="email">maksym.bondarenko@example.com</field>
+        <field name="phone">+380674444444</field>
     </record>
 
-    <record id="teacher_flus" model="training.center.teacher">
-        <field name="name">Dr. Flus</field>
-        <field name="specialty">Therapy Assistant</field>
+    <record id="teacher_koval" model="training.center.teacher">
+        <field name="name">Sofia Koval</field>
+        <field name="specialty">Odoo Assistant</field>
         <field name="category_id" ref="teacher_category_assistant"/>
-        <field name="mentor_id" ref="teacher_hlus"/>
-        <field name="birth_date">1998-04-14</field>
-        <field name="gender">male</field>
-        <field name="blood_type">a_positive</field>
-        <field name="email">dr_flus.adams@example.com</field>
-        <field name="phone">+380501112233</field>
-    </record>
-
-    <record id="teacher_zlus" model="training.center.teacher">
-        <field name="name">Dr. Zlus</field>
-        <field name="specialty">Infectious Subject Assistant</field>
-        <field name="category_id" ref="teacher_category_assistant"/>
-        <field name="mentor_id" ref="teacher_clus"/>
-        <field name="birth_date">1999-09-27</field>
+        <field name="mentor_id" ref="teacher_shevchenko"/>
+        <field name="birth_date">1999-09-05</field>
         <field name="gender">female</field>
-        <field name="blood_type">b_negative</field>
-        <field name="email">dr_zlus@example.com</field>
-        <field name="phone">+380502223344</field>
+        <field name="education_level">bachelor</field>
+        <field name="email">sofia.koval@example.com</field>
+        <field name="phone">+380675555555</field>
     </record>
 
-    <record id="student_smith" model="training.center.student">
-        <field name="name">John Smith</field>
-        <field name="birth_date">1989-12-15</field>
+    <!-- Students -->
+    <record id="student_petrenko" model="training.center.student">
+        <field name="name">Petro Petrenko</field>
+        <field name="birth_date">1995-06-14</field>
         <field name="gender">male</field>
-        <field name="blood_type">a_positive</field>
-        <field name="email">student_smith@example.com</field>
-        <field name="phone">+380671234567</field>
-        <field name="personal_teacher_id" ref="teacher_hlus"/>
-        <field name="insurance_policy_number">POL-0000000001</field>
+        <field name="education_level">phd</field>
+        <field name="email">petro.petrenko@example.com</field>
+        <field name="phone">+380501111111</field>
+        <field name="personal_teacher_id" ref="teacher_ivanenko"/>
+        <field name="contract_number">STU-0000000001</field>
     </record>
 
-    <record id="student_doe" model="training.center.student">
-        <field name="name">John Doe</field>
-        <field name="birth_date">1989-12-15</field>
+    <record id="student_hrytsenko" model="training.center.student">
+        <field name="name">Anna Hrytsenko</field>
+        <field name="birth_date">1998-11-02</field>
+        <field name="gender">female</field>
+        <field name="education_level">master</field>
+        <field name="email">anna.hrytsenko@example.com</field>
+        <field name="phone">+380502222222</field>
+        <field name="personal_teacher_id" ref="teacher_shevchenko"/>
+        <field name="contract_number">STU-0000000002</field>
+    </record>
+
+    <record id="student_moroz" model="training.center.student">
+        <field name="name">Dmytro Moroz</field>
+        <field name="birth_date">1992-03-19</field>
         <field name="gender">male</field>
-        <field name="blood_type">o_positive</field>
-        <field name="email">student_doe@example.com</field>
-        <field name="phone">+380671234567</field>
-        <field name="personal_teacher_id" ref="teacher_clus"/>
-        <field name="insurance_policy_number">POL-0000000002</field>
+        <field name="education_level">bachelor</field>
+        <field name="email">dmytro.moroz@example.com</field>
+        <field name="phone">+380503333333</field>
+        <field name="personal_teacher_id" ref="teacher_melnyk"/>
+        <field name="contract_number">STU-0000000003</field>
     </record>
 
-    <record id="student_twister" model="training.center.student">
-        <field name="name">John Twister</field>
-        <field name="birth_date">1989-12-15</field>
-        <field name="gender">male</field>
-        <field name="blood_type">b_negative</field>
-        <field name="email">student_twister@example.com</field>
-        <field name="phone">+380671234567</field>
-        <field name="personal_teacher_id" ref="teacher_plus"/>
-        <field name="insurance_policy_number">POL-0000000003</field>
+    <!-- Teacher assignment history -->
+    <record id="teacher_assignment_petrenko_ivanenko" model="training.center.teacher.assignment.history">
+        <field name="student_id" ref="student_petrenko"/>
+        <field name="teacher_id" ref="teacher_ivanenko"/>
+        <field name="assignment_date">2026-01-10</field>
     </record>
 
-    <record id="teacher_history_smith_hlus" model="training.center.teacher.assignment.history">
-        <field name="student_id" ref="student_smith"/>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="assignment_date">2025-01-10</field>
-        <field name="teacher_change_date">2025-04-15</field>
+    <record id="teacher_assignment_hrytsenko_shevchenko" model="training.center.teacher.assignment.history">
+        <field name="student_id" ref="student_hrytsenko"/>
+        <field name="teacher_id" ref="teacher_shevchenko"/>
+        <field name="assignment_date">2026-01-15</field>
     </record>
 
-    <record id="teacher_history_smith_clus" model="training.center.teacher.assignment.history">
-        <field name="student_id" ref="student_smith"/>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="assignment_date">2025-04-16</field>
+    <record id="teacher_assignment_moroz_melnyk" model="training.center.teacher.assignment.history">
+        <field name="student_id" ref="student_moroz"/>
+        <field name="teacher_id" ref="teacher_melnyk"/>
+        <field name="assignment_date">2026-02-01</field>
     </record>
 
-    <record id="teacher_history_doe_clus" model="training.center.teacher.assignment.history">
-        <field name="student_id" ref="student_doe"/>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="assignment_date">2025-02-05</field>
+    <record id="teacher_assignment_petrenko_bondarenko" model="training.center.teacher.assignment.history">
+        <field name="student_id" ref="student_petrenko"/>
+        <field name="teacher_id" ref="teacher_bondarenko"/>
+        <field name="assignment_date">2026-03-01</field>
+        <field name="teacher_change_date">2026-04-01</field>
     </record>
 
-    <record id="teacher_history_twister_plus" model="training.center.teacher.assignment.history">
-        <field name="student_id" ref="student_twister"/>
-        <field name="teacher_id" ref="teacher_plus"/>
-        <field name="assignment_date">2025-03-12</field>
-    </record>
-
-    <record id="lesson_smith_planned" model="training.center.lesson">
+    <!-- Lessons -->
+    <record id="lesson_petrenko_python_planned" model="training.center.lesson">
         <field name="status">planned</field>
         <field name="planned_datetime">2026-07-01 09:00:00</field>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="student_id" ref="student_smith"/>
+        <field name="teacher_id" ref="teacher_ivanenko"/>
+        <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Initial planned consultation.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Introduction to Python syntax and variables.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_smith_done" model="training.center.lesson">
+    <record id="lesson_petrenko_python_done" model="training.center.lesson">
         <field name="status">done</field>
         <field name="planned_datetime">2026-06-01 10:00:00</field>
         <field name="lesson_datetime">2026-06-01 10:05:00</field>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="student_id" ref="student_smith"/>
+        <field name="teacher_id" ref="teacher_ivanenko"/>
+        <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Student examined. Treatment assigned.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;The student completed basic Python exercises.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_doe_planned" model="training.center.lesson">
+    <record id="lesson_hrytsenko_odoo_planned" model="training.center.lesson">
         <field name="status">planned</field>
         <field name="planned_datetime">2026-07-02 11:30:00</field>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="student_id" ref="student_doe"/>
+        <field name="teacher_id" ref="teacher_shevchenko"/>
+        <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Follow-up planned lesson.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Planned lesson about Odoo models and fields.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_doe_done" model="training.center.lesson">
+    <record id="lesson_hrytsenko_odoo_done" model="training.center.lesson">
         <field name="status">done</field>
         <field name="planned_datetime">2026-06-03 13:00:00</field>
         <field name="lesson_datetime">2026-06-03 13:10:00</field>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="student_id" ref="student_doe"/>
+        <field name="teacher_id" ref="teacher_shevchenko"/>
+        <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Lesson completed successfully.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;The lesson about Odoo views was completed.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_twister_cancelled" model="training.center.lesson">
+    <record id="lesson_moroz_web_cancelled" model="training.center.lesson">
         <field name="status">cancelled</field>
         <field name="planned_datetime">2026-06-15 15:00:00</field>
-        <field name="teacher_id" ref="teacher_plus"/>
-        <field name="student_id" ref="student_twister"/>
+        <field name="teacher_id" ref="teacher_melnyk"/>
+        <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;Lesson cancelled by student.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;The web development lesson was cancelled by the student.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_twister_planned" model="training.center.lesson">
+    <record id="lesson_moroz_web_planned" model="training.center.lesson">
         <field name="status">planned</field>
         <field name="planned_datetime">2026-07-05 16:30:00</field>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="student_id" ref="student_twister"/>
+        <field name="teacher_id" ref="teacher_melnyk"/>
+        <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;Consultation is planned.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Planned HTML and CSS practice lesson.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_task_4_smith_march_done" model="training.center.lesson">
-        <field name="status">done</field>
-        <field name="planned_datetime">2026-03-10 09:30:00</field>
-        <field name="lesson_datetime">2026-03-10 09:40:00</field>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="student_id" ref="student_smith"/>
-        <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Additional demo lesson for flu treatment control.&lt;/p&gt;</field>
-    </record>
-
-    <record id="lesson_task_4_doe_march_cancelled" model="training.center.lesson">
-        <field name="status">cancelled</field>
-        <field name="planned_datetime">2026-03-18 12:00:00</field>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="student_id" ref="student_doe"/>
-        <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Additional demo lesson cancelled by student.&lt;/p&gt;</field>
-    </record>
-
-    <record id="lesson_task_4_twister_april_planned" model="training.center.lesson">
-        <field name="status">planned</field>
-        <field name="planned_datetime">2026-04-08 14:15:00</field>
-        <field name="teacher_id" ref="teacher_plus"/>
-        <field name="student_id" ref="student_twister"/>
-        <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;Additional demo planned lesson for cold symptoms.&lt;/p&gt;</field>
-    </record>
-
-    <record id="lesson_task_4_smith_april_done" model="training.center.lesson">
+    <record id="lesson_petrenko_odoo_done" model="training.center.lesson">
         <field name="status">done</field>
         <field name="planned_datetime">2026-04-22 10:45:00</field>
         <field name="lesson_datetime">2026-04-22 10:55:00</field>
-        <field name="teacher_id" ref="teacher_clus"/>
-        <field name="student_id" ref="student_smith"/>
+        <field name="teacher_id" ref="teacher_shevchenko"/>
+        <field name="student_id" ref="student_petrenko"/>
         <field name="subject_id" ref="subject_covid"/>
-        <field name="summary">&lt;p&gt;Additional demo completed lesson with COVID diagnosis.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Additional completed Odoo lesson.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_task_4_doe_may_planned" model="training.center.lesson">
+    <record id="lesson_hrytsenko_python_planned" model="training.center.lesson">
         <field name="status">planned</field>
         <field name="planned_datetime">2026-05-12 16:00:00</field>
-        <field name="teacher_id" ref="teacher_hlus"/>
-        <field name="student_id" ref="student_doe"/>
+        <field name="teacher_id" ref="teacher_ivanenko"/>
+        <field name="student_id" ref="student_hrytsenko"/>
         <field name="subject_id" ref="subject_flu"/>
-        <field name="summary">&lt;p&gt;Additional demo planned follow-up lesson.&lt;/p&gt;</field>
+        <field name="summary">&lt;p&gt;Planned Python follow-up lesson.&lt;/p&gt;</field>
     </record>
 
-    <record id="lesson_task_4_twister_may_done" model="training.center.lesson">
+    <record id="lesson_moroz_web_done" model="training.center.lesson">
         <field name="status">done</field>
         <field name="planned_datetime">2026-05-28 11:20:00</field>
         <field name="lesson_datetime">2026-05-28 11:35:00</field>
-        <field name="teacher_id" ref="teacher_plus"/>
-        <field name="student_id" ref="student_twister"/>
+        <field name="teacher_id" ref="teacher_bondarenko"/>
+        <field name="student_id" ref="student_moroz"/>
         <field name="subject_id" ref="subject_cold"/>
-        <field name="summary">&lt;p&gt;Additional demo completed lesson for cold symptoms.&lt;/p&gt;</field>
-    </record>
-
-    <record id="demo_subject_respiratory" model="training.center.subject">
-        <field name="code">RESP</field>
-        <field name="name">Respiratory subjects</field>
-    </record>
-
-    <record id="demo_subject_viral_respiratory" model="training.center.subject">
-        <field name="code">VIRAL-RESP</field>
-        <field name="name">Viral respiratory infections</field>
-        <field name="parent_id" ref="demo_subject_respiratory"/>
-    </record>
-
-    <record id="demo_subject_influenza" model="training.center.subject">
-        <field name="code">INFL</field>
-        <field name="name">Influenza</field>
-        <field name="parent_id" ref="demo_subject_viral_respiratory"/>
-    </record>
-
-    <record id="demo_subject_covid19" model="training.center.subject">
-        <field name="code">COVID19</field>
-        <field name="name">COVID-19</field>
-        <field name="parent_id" ref="demo_subject_viral_respiratory"/>
-    </record>
-
-    <record id="demo_subject_bacterial_pneumonia" model="training.center.subject">
-        <field name="code">PNEUM-BAC</field>
-        <field name="name">Bacterial pneumonia</field>
-        <field name="parent_id" ref="demo_subject_respiratory"/>
+        <field name="summary">&lt;p&gt;The student completed CSS selectors practice.&lt;/p&gt;</field>
     </record>
 </odoo>
