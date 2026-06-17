@@ -22,26 +22,6 @@ msgid "Training Center"
 msgstr "HR Лікарня"
 
 #. module: training_center
-#: model:res.groups,name:training_center.group_training_center_student
-msgid "Student"
-msgstr "Пацієнт"
-
-#. module: training_center
-#: model:res.groups,name:training_center.group_training_center_assistant
-msgid "Assistant"
-msgstr "Інтерн"
-
-#. module: training_center
-#: model:res.groups,name:training_center.group_training_center_teacher
-msgid "Teacher"
-msgstr "Лікар"
-
-#. module: training_center
-#: model:res.groups,name:training_center.group_training_center_manager
-msgid "Manager"
-msgstr "Менеджер"
-
-#. module: training_center
 #: model:res.groups,name:training_center.group_training_center_admin
 msgid "Administrator"
 msgstr "Адміністратор"
@@ -687,3 +667,13 @@ msgstr "Дата зміни"
 #: model:ir.model.fields,field_description:training_center.field_lesson_report_wizard__only_done
 msgid "Only Completed Lessons"
 msgstr "Тільки завершені відвідування"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_user
+msgid "User"
+msgstr "Користувач"
+
+#. module: training_center
+#: model:res.groups,name:training_center.group_training_center_admin
+msgid "Admin"
+msgstr "Адміністратор"
