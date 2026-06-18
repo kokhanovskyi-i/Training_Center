@@ -15,9 +15,7 @@ class TestTrainingCenterModels(TransactionCase):
         self.Lesson = self.env['training.center.lesson']
         self.TeacherCategory = self.env['training.center.teacher.category']
         self.TeacherHistory = self.env['training.center.teacher.assignment.history']
-        self.MassReassignWizard = self.env['training.center.mass.reassign.teacher.wizard']
         self.LessonReportWizard = self.env['training.center.lesson.report.wizard']
-        self.SubjectReportWizard = self.env['training.center.subject.report.wizard']
 
         self.assistant_category = self.env.ref('training_center.teacher_category_assistant')
         self.specialist_category = self.env.ref('training_center.teacher_category_specialist')
@@ -206,30 +204,6 @@ class TestTrainingCenterModels(TransactionCase):
                 }
             )
 
-    def test_mass_reassign_teacher_wizard_changes_student_teacher(self):
-        "Check mass reassign teacher wizard."
-        old_teacher = self._create_teacher(
-            'Test Old Teacher',
-            self.specialist_category,
-        )
-        new_teacher = self._create_teacher(
-            'Test New Teacher',
-            self.specialist_category,
-        )
-        student = self._create_student('Test Reassign Student', old_teacher)
-
-        wizard = self.MassReassignWizard.with_context(
-            active_ids=[student.id],
-        ).create(
-            {
-                'new_teacher_id': new_teacher.id,
-                'change_date': '2026-02-01',
-            }
-        )
-        wizard.action_reassign_teacher()
-
-        self.assertEqual(student.personal_teacher_id, new_teacher)
-
     def test_lesson_report_wizard_builds_action(self):
         "Check lesson report wizard action."
         teacher = self._create_teacher(
@@ -249,30 +223,6 @@ class TestTrainingCenterModels(TransactionCase):
 
         self.assertEqual(action['res_model'], 'training.center.lesson')
         self.assertIn(('status', '=', 'done'), action['domain'])
-
-    def test_subject_report_wizard_builds_action(self):
-        "Check subject report wizard action."
-        teacher = self._create_teacher(
-            'Test Subject Report Teacher',
-            self.specialist_category,
-        )
-        subject = self._create_subject(
-            'TEST-REPORT-SUBJECT',
-            'Test Report Subject',
-        )
-
-        wizard = self.SubjectReportWizard.create(
-            {
-                'teacher_ids': [(6, 0, [teacher.id])],
-                'subject_ids': [(6, 0, [subject.id])],
-                'date_from': '2026-01-01',
-                'date_to': '2026-12-31',
-            }
-        )
-        action = wizard.action_show_report()
-
-        self.assertEqual(action['res_model'], 'training.center.lesson')
-        self.assertIn(('subject_id', 'in', subject.ids), action['domain'])
 
     def test_res_partner_training_center_role(self):
         "Check extension of res.partner."

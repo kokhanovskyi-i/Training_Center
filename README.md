@@ -4,7 +4,7 @@ Training Center is an educational Odoo module for managing a small training
 center.
 
 The module includes students, teachers, teacher categories, subjects, lessons,
-teacher assignment history, wizards, a printable teacher report, access rights,
+teacher assignment history, a lesson report wizard, a printable teacher report, access rights,
 Ukrainian translation, and automated tests.
 
 ## Main features
@@ -14,8 +14,7 @@ Ukrainian translation, and automated tests.
 - Manage hierarchical subjects.
 - Manage lessons between students and teachers.
 - Track main teacher assignment history.
-- Reassign main teachers using a wizard.
-- Generate lesson and subject reports using wizards.
+- Generate lesson reports using a wizard.
 - Print a teacher PDF report.
 - Use Training Center User and Admin security groups.
 

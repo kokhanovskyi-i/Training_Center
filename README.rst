@@ -18,8 +18,7 @@ Features
 * Manage lessons between students and teachers.
 * Track lesson statuses: planned, done, and cancelled.
 * Track main teacher assignment history.
-* Reassign main teachers using a wizard.
-* Generate lesson and subject reports using wizards.
+* Generate lesson reports using a wizard.
 * Generate a printable teacher report in PDF format.
 * Use kanban, search, pivot, graph, calendar, list, and form views.
 * Use dedicated Training Center User and Admin security groups.

@@ -131,3 +131,15 @@ class TrainingCenterLesson(models.Model):
             'domain': domain,
             'context': context,
         }
+
+    def action_set_done(self):
+        """Set status to done"""
+        self.write({'status': 'done'})
+
+    def action_set_cancelled(self):
+        """Set status to cancelled"""
+        self.write({'status': 'cancelled'})
+
+    def action_set_planned(self):
+        """Set status back to planned"""
+        self.write({'status': 'planned'})

@@ -57,7 +57,6 @@ msgstr "Студент"
 #. module: training_center
 #: model:ir.ui.menu,name:training_center.menu_training_center_subjects
 #: model:ir.actions.act_window,name:training_center.action_training_center_subject
-#: model:ir.model.fields,field_description:training_center.field_training_center_subject_report_wizard__subject_ids
 msgid "Subjects"
 msgstr "Предмети"
 
@@ -372,14 +371,7 @@ msgid "Delete"
 msgstr "Видалити"
 
 #. module: training_center
-#: model_terms:ir.ui.view,arch_db:training_center.view_mass_reassign_teacher_wizard_form
-msgid "Reassign"
-msgstr "Перепризначити"
-
-#. module: training_center
-#: model_terms:ir.ui.view,arch_db:training_center.view_mass_reassign_teacher_wizard_form
 #: model_terms:ir.ui.view,arch_db:training_center.view_lesson_report_wizard_form
-#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -389,24 +381,9 @@ msgid "Show Lessons"
 msgstr "Показати заняття"
 
 #. module: training_center
-#: model_terms:ir.ui.view,arch_db:training_center.view_subject_report_wizard_form
-msgid "Show Report"
-msgstr "Показати звіт"
-
-#. module: training_center
-#: model:ir.actions.act_window,name:training_center.action_mass_reassign_teacher_wizard
-msgid "Reassign Main Teacher"
-msgstr "Перепризначити основного викладача"
-
-#. module: training_center
 #: model:ir.actions.act_window,name:training_center.action_lesson_report_wizard
 msgid "Lesson Report"
 msgstr "Звіт по заняттях"
-
-#. module: training_center
-#: model:ir.actions.act_window,name:training_center.action_subject_report_wizard
-msgid "Subject Report"
-msgstr "Звіт по предметах"
 
 #. module: training_center
 #: model:ir.actions.report,name:training_center.action_report_training_center_teacher
@@ -414,24 +391,12 @@ msgid "Teacher Report"
 msgstr "Звіт по викладачу"
 
 #. module: training_center
-#: model:ir.model.fields,field_description:training_center.field_training_center_mass_reassign_teacher_wizard__new_teacher_id
-msgid "New Teacher"
-msgstr "Новий викладач"
-
-#. module: training_center
-#: model:ir.model.fields,field_description:training_center.field_training_center_mass_reassign_teacher_wizard__change_date
-msgid "Change Date"
-msgstr "Дата зміни"
-
-#. module: training_center
 #: model:ir.model.fields,field_description:training_center.field_training_center_lesson_report_wizard__date_from
-#: model:ir.model.fields,field_description:training_center.field_training_center_subject_report_wizard__date_from
 msgid "Date From"
 msgstr "Дата з"
 
 #. module: training_center
 #: model:ir.model.fields,field_description:training_center.field_training_center_lesson_report_wizard__date_to
-#: model:ir.model.fields,field_description:training_center.field_training_center_subject_report_wizard__date_to
 msgid "Date To"
 msgstr "Дата до"
 
@@ -612,3 +577,18 @@ msgstr "Ступінь магістра"
 #: model:ir.model.fields.selection,name:training_center.selection__training_center_person_info__education_level__phd
 msgid "PhD"
 msgstr "Доктор філософії"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Mark as Done"
+msgstr "Виконати"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Reset to Planned"
+msgstr "Повернути в заплановано"
+
+#. module: training_center
+#: model_terms:ir.ui.view,arch_db:training_center.view_training_center_lesson_form
+msgid "Cancel"
+msgstr "Скасувати"

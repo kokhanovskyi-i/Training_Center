@@ -22,6 +22,22 @@
         <field name="arch" type="xml">
             <form>
                 <header>
+                    <button name="action_set_done"
+                            type="object"
+                            string="Mark as Done"
+                            class="btn-primary"
+                            invisible="status != 'planned'"/>
+
+                    <button name="action_set_cancelled"
+                            type="object"
+                            string="Cancel"
+                            invisible="status == 'cancelled'"/>
+
+                    <button name="action_set_planned"
+                            type="object"
+                            string="Reset to Planned"
+                            invisible="status == 'planned'"/>
+
                     <field name="status"
                            widget="statusbar"
                            statusbar_visible="planned,done,cancelled"/>
