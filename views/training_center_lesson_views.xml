@@ -48,7 +48,7 @@
                         <button name="action_view_same_subject_lessons"
                                 type="object"
                                 class="oe_stat_button"
-                                icon="fa-stethoscope"
+                                icon="fa-book"
                                 invisible="not subject_id">
                             <field name="same_subject_lesson_count"
                                    widget="statinfo"
